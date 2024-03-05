@@ -1,0 +1,458 @@
+---
+export const prerender = true
+import Content from "../../../components/Content/LandingContent.astro";
+import LandingSubPageHero from "../../../components/Hero/LandingSubPageHero.astro";
+import ImageContentBlock from "../../../components/ImageContentBlock.astro";
+import Section from "../../../components/Section/Section.astro";
+import LandingSectionTitle from "../../../components/Typography/LandingSectionTitle.astro";
+import Layout from "../../../layouts/LandingLayout.astro";
+import blogBanner from "../../../assets/images/mesotherapy2.jpg";
+import BlogPostListing from "../../../components/Blog/BlogPostListing.astro";
+import headImage from "../../../assets/images/blog/dermal1.jpg";
+import headImage2 from "../../../assets/images/blog/blog-img1.jpg";
+import headImage3 from "../../../assets/images/blog/hifu.jpeg";
+import mesoImage2 from "../../../assets/images/mesotherapy1.webp";
+import mesoImage3 from "../../../assets/images/mesotherapy3.jpg";
+import mesoImage4 from "../../../assets/images/mesotherapy4.jpg";
+import mesoImage6 from "../../../assets/images/mesotherapy6.jpg";
+
+import cost from "../../../assets/images/cost.jpg";
+import ctaImage1 from "../../../assets/images/homepage-face.jpeg";
+import versatile from "../../../assets/images/mesotherapy5.jpg";
+import awiImage3 from "../../../assets/images/awi3.jpg";
+import quick from "../../../assets/images/stopwatch.jpg";
+import HeroDecorator from "../../../components/Decoraters/";
+
+import { Image } from 'astro:assets'
+
+import { getSpecificTowns } from "../../../lib/getTowns";
+
+export async function getStaticPaths() {
+  const towns = await getSpecificTowns();
+
+  const paths = [];
+  for (let i = 0; i < towns.length; i++) {
+    const town = towns[i];
+    let path = town
+      .toLowerCase()
+      .replace(/ /g, "-")
+      .replace(/\`/, "")
+      .replace(/\./, "")
+      .replace(/\'/, "");
+    paths.push({ params: { slug: path }, props: { town } });
+  }
+
+  return paths;
+}
+
+const { town } = Astro.props;
+---
+
+<Layout title="Mesotherapy treatment from Aesthetic Allure Medical Spa and Skin Clinic" description="Mesotherapy treatment from Aesthetic Allure Medical Spa and Skin Clinic. Comprehensive services help achieve optimal skin health and beauty goals.">
+  
+  <LandingSubPageHero
+    heading="Mesotherapy Treatment"
+  
+    headerCopy={`Are you looking for a safe, non-invasive solution to lift and contour your skin? HIFU skin tightening is the answer. This revolutionary treatment uses high-intensity focused ultrasound technology to target multiple depths of tissue in the body, providing effective results with minimal downtime. With HIFU skin tightening, you can achieve tighter, firmer skin without surgery or pain, at a price far cheaper than a surgical facelift. From face lifting to body sculpting, this advanced procedure offers amazing results that last for months after just one session! So if you're looking for an easy way to improve your appearance without going under the knife, look no further than HIFU skin tightening! 
+
+    `}
+    image={blogBanner}
+  />
+ <main>
+
+ 
+
+
+  <!--Start of section--><div class="max-w-7xl my-10 mx-auto px-4 lg:px-0">
+    <LandingSectionTitle classes="pb-4 mt-6 text-left">Mesotherapy Treatment {town}
+    </LandingSectionTitle>
+    <div
+         class="text-neutral-800 grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+       >
+       <div class="group relative flex flex-col">
+
+    <p class="mb-2 ">
+        The Mesotherapy procedure is incredibly safe and effective, with no downtime required. This makes it an ideal choice for those looking to make subtle changes in their appearance without the expense and risks associated with more invasive procedures. 
+    </p>
+    <p class="mb-2">
+        Mesotherapy delivers direct shots of vitamins and minerals at a precise depth. This is to encourage the production of new collagen and new skin cells to replace the old, damaged ones. 
+    </p>
+    <p class="mb-2">
+        During the treatment, a specialized medical professional will apply a topical anaesthetic before injecting the skin with tiny amounts of vitamins, minerals and other active ingredients. The injections target specific problem areas, such as wrinkles, dark spots, or sagging skin. 
+    </p>
+    <p class="mb-2">
+        After the procedure is complete, you may experience some slight swelling or redness in the treated area, but this typically fades within a few days. With regular maintenance treatments every 3-6 months, you can maintain your beautiful, younger-looking complexion for years to come. 
+    </p> 
+
+    
+    </div>
+    <div class="group relative flex flex-col overflow-hidden">
+      
+      <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+        <Image
+        class="h-full w-full object-cover rounded-lg  shadow-lg mb-2"
+        src={mesoImage2}
+        alt="Hifu Skin Tightening"
+        width={800}
+        height={600}
+        format={"webp"}
+      />
+      
+      <h4 class="text-xs mt-2 text-right hidden md:block"> Tighten loose skin with Mesotherapy treatment
+
+      </h4>
+      </div>
+      <h4 class="text-xs mt-2 text-right md:hidden"> Tighten loose skin with Mesotherapy treatment
+
+      </h4>
+    </div>
+    </div>
+  </div><!-- End of Section -->
+  
+
+
+  <div class="max-w-7xl mx-auto lg:rounded-lg mb-10 overflow-hidden">
+    <ImageContentBlock
+    title="Book Your Consultation Today"
+    copy="Get in touch to find out more and speak to one of our experts."
+    image={ctaImage1}
+    href="https://www.allurespa.co.uk/treatments/mesotherapy"
+    linkText="BOOK NOW"
+  />
+  </div>
+
+  
+
+
+     <!--START OF SECTION --> <div
+    class="mx-auto max-w-2xl  px-4 lg:max-w-7xl text-neutral-800"
+  >
+    <LandingSectionTitle classes="pb-12 lg:py-12 md:text-center">The Benefits of Mesotherapy
+
+    </LandingSectionTitle>
+    
+    <div
+      class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+    >
+   
+
+    <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+      <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+        <Image
+          width={1000}
+          height={600}
+          src={mesoImage3}
+          alt="Hifu Skin Tightening"
+          format="webp"
+          class="h-full w-full object-cover object-center sm:h-full sm:w-full"
+        />
+      </div>
+      <div class="flex flex-1 flex-col space-y-2 py-4">
+        <h3 class="text-lg font-bold text-gray-900">
+            Non-Invasive & Safe
+        </h3>
+        <p>
+            Mesotherapy is a non-invasive treatment that does not require any extensive recovery time. The procedure is safe and has minimal side effects, making it an ideal choice for those looking to make subtle changes in their appearance without the expense and risks associated with more invasive procedures.
+
+        </p>
+      </div>
+    </div>
+
+    <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+      <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+        <Image
+          width={1000}
+          height={600}
+          src={quick}
+          alt="Hifu Skin Tightening"
+          format="webp"
+          class="h-full w-full object-cover object-center sm:h-full sm:w-full"
+        />
+      </div>
+      <div class="flex flex-1 flex-col space-y-2 py-4">
+        <h3 class="text-lg font-bold text-gray-900">
+            Instant Results
+        </h3>
+        <p>
+          
+            With mesotherapy, you can enjoy immediate and long-lasting results. The combination of vitamins, minerals, and other active ingredients injected into the skin helps to promote collagen production, which leads to visible improvement in skin tone and texture. You will be able to see a noticeable difference in the appearance of wrinkles, dark spots and other imperfections immediately.
+            
+            
+        </p>
+      </div>
+    </div>
+  </div>
+ 
+</div><!--END OF SECTION -->
+
+
+ <!--START OF SECTION --> <div
+ class="mx-auto max-w-2xl px-4 lg:max-w-7xl text-neutral-800"
+ >
+   <div
+     class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+   >
+
+   <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+     <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+       <Image
+         width={1000}
+         height={600}
+         src={cost}
+         alt="Hifu Skin Tightening"
+         format="webp"
+         class="h-full w-full object-cover object-center sm:h-full sm:w-full"
+       />
+     </div>
+     <div class="flex flex-1 flex-col space-y-2 py-4">
+       <h3 class="text-lg font-bold text-gray-900">
+        
+        Cost Effective</h3>
+       <p>
+Mesotherapy is an affordable treatment that delivers dramatic results without breaking the bank. With each session lasting around 30 minutes, you can enjoy beautiful skin without spending hours in the spa or undergoing expensive surgeries.</p>
+     </div>
+   </div>
+
+   <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+     <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+       <Image
+         width={1000}
+         height={600}
+         src={versatile}
+         alt="Hifu Skin Tightening"
+         format="webp"
+         class="h-full w-full object-cover object-center sm:h-full sm:w-full"
+       />
+     </div>
+     <div class="flex flex-1 flex-col space-y-2 py-4">
+       <h3 class="text-lg font-bold text-gray-900">
+        Versatility      </h3>
+       <p>
+       
+        Mesotherapy can be used on almost all areas of the body, including the face, neck, chest and hands. It is especially effective in reducing wrinkles around the eyes and mouth, as well as improving skin tone and texture. It can be used to complement other aesthetic treatments such as peels, anti-wrinkle injections and Dermal Fillers for even more dramatic results.
+
+    </p>
+     </div>
+   </div>
+ </div>
+ 
+ 
+</div><!--END OF SECTION -->
+
+
+ <!--Start of section--><div class="max-w-7xl mt-0 pb-0 mb-10 mx-auto px-4 lg:px-0 text-neutral-800">
+    
+  <LandingSectionTitle classes="pb-4 text-left">Mesotherapy - the Ultimate Anti-ageing Solution
+  </LandingSectionTitle>
+  <div
+       class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+     >
+     <div class="group relative flex flex-col">
+
+  <p class="mb-2">
+    Mesotherapy is a non-surgical anti-ageing treatment that has emerged as the ultimate solution for ageing skin. Unlike other surgical treatments, mesotherapy involves multiple small injections of a combination of vitamins, minerals, amino acids, and hyaluronic acid into the skin, restoring it to its former youthful condition.
+  </p>
+  <p class="mb-2">
+    The procedure will be performed by our fully qualified staff, who will customize the solution based on the individual’s skin type and condition. The effects of mesotherapy are almost immediate, with improvements in hydration, collagen production, and overall skin health seen within two weeks of treatment.
+  </p>
+  <p class="mb-2">
+    The treatment can be used to reduce wrinkles and fine lines, restore lost volume and elasticity, diminish dark spots and discolouration, even out skin tone, reduce puffiness around the eyes, improve skin hydration and texture, and generally revitalize the complexion.
+  </p>
+  <p class="mb-2">
+    The treatment can even help with hair loss, correcting hormone imbalance around the hair follicle. 
+
+    Mesotherapy is also a great solution for those looking to improve their overall skin health long-term. The ingredients used in the injections nourish the skin, helping to protect against environmental damage and slowing down the ageing process.
+          </p>
+  <p class="mb-2">
+    The results of mesotherapy can be seen for up to six months post-treatment, making it an ideal solution for anyone looking for long-term anti-ageing benefits. 
+  </p>
+  
+  </div>
+  <div class="group relative flex flex-col overflow-hidden">
+    
+    <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+      <Image
+      class="h-full w-full object-cover rounded-lg  shadow-lg mb-10"
+      src={mesoImage4}
+      alt="Hifu Skin Tightening"
+      width={800}
+      height={600}
+      format={"webp"}
+    />
+    
+    <h4 class="text-xs mt-2 text-right hidden md:block"> Vitamins stimulate the skin cells which causes increased production of collagen and elastin fibres
+ 
+    </h4>
+    </div>
+    <h4 class="text-xs mt-2 text-right md:hidden"> Vitamins stimulate the skin cells which causes increased production of collagen and elastin fibres
+    </h4>
+  </div>
+  </div>
+</div><!-- End of Section -->
+
+
+<div class="max-w-7xl mx-auto lg:rounded-lg mb-20 overflow-hidden">
+  <ImageContentBlock
+  title="Book Your Consultation Today"
+  copy="Get in touch to find out more and speak to one of our experts."
+  image={ctaImage1}
+  href="https://www.allurespa.co.uk/treatments/mesotherapy"
+  linkText="BOOK NOW"
+/>
+</div>
+
+ <!--Start of section--><div class="max-w-7xl mt-0 pb-0 mb-10 mx-auto px-4 lg:px-0 text-neutral-800">
+  <LandingSectionTitle classes="pb-4 mt-6 text-left">What to Expect from Professional Mesotherapy
+  </LandingSectionTitle>
+  <div
+  class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+>
+<div class="group relative flex flex-col">
+
+  
+  <p class="mb-2">
+    Mesotherapy is a type of medical treatment that involves injecting small doses of medications, vitamins, and minerals into the skin. It is primarily used as a cosmetic procedure to help reduce fat and cellulite, as well as improve skin tone and texture. Professional mesotherapy treatments are performed by board-certified doctors or other qualified healthcare providers and require a thorough consultation beforehand. 
+  </p>
+  <p class="mb-2">
+    When you come in for a mesotherapy treatment, our experts will begin by assessing the areas of your body that need to be treated. During the injection process, several tiny needles will be used to deliver a series of injections into the targeted area. 
+  </p>
+  <p class="mb-2">
+    The overall experience should not be painful, but may feel slightly uncomfortable for some patients. After your treatment is completed, you may experience some redness and swelling at the injection sites, which should subside within a few days. 
+  </p>
+  <p class="mb-2">
+    Most mesotherapy treatments require 3-5 sessions spaced out over a period of 4-6 weeks.
+  </p>
+  <p class="mb-2">
+    With professional mesotherapy treatments, most patients can expect to see noticeable results within a few months. However, it is important to keep in mind that these results may not be permanent and additional touch-up sessions may be necessary down the line. Additionally, we will provide you with aftercare instructions following your treatment, which you should follow carefully to ensure optimal results. 
+  </p>
+ 
+  </div>
+  <div class="group relative flex flex-col overflow-hidden">
+    
+    <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+      <Image
+      class="h-full w-full object-cover rounded-lg shadow-lg mb-2"
+      src={mesoImage6}
+      alt="Hifu Skin Tightening"
+      width={800}
+      height={600}
+      format={"webp"}
+    />
+    <h4 class="text-xs mt-2 text-right hidden md:block">Maintain a youthful appearance with regular Mesotherapy treatment 
+ 
+    </h4>
+    </div>
+    <h4 class="text-xs mt-2 text-right md:hidden">Maintain a youthful appearance with regular Mesotherapy treatment 
+
+    </h4>
+  </div>
+  </div>
+</div><!-- End of Section -->
+
+<!-- START OF FAQ SECTION -->
+
+<div class="bg-gray-50 mb-20">
+  <div class="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8">
+
+
+    <LandingSectionTitle classes="pb-4 text-left">Mesotherapy FAQ 
+
+    </LandingSectionTitle>    
+    
+ 
+    <div>
+      <dl class="space-y-16 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-16 sm:space-y-0 lg:grid-cols-3 lg:gap-x-10">
+      
+
+        
+
+        <!-- More questions... -->
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900"> What is Mesotherapy? 
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-neutral-800">
+           
+            Mesotherapy is a type of medical treatment that involves injecting small doses of medications, vitamins and minerals into the skin. It is mainly used as a cosmetic procedure to reduce fat and cellulite, improve skin tone and texture, and rejuvenate the skin’s appearance. 
+          </dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900"> Who Can Perform Mesotherapy? 
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-neutral-800">
+           
+            Professional mesotherapy treatments are only performed by board-certified doctors or other qualified healthcare providers.           </dd>
+        </div>
+
+        
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900"> What Does the Treatment Involve? 
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-neutral-800">
+           
+            During the treatment, several tiny needles will be used to deliver a series of injections into the targeted area. The overall experience should not be painful, but may feel slightly uncomfortable for some patients. 
+
+          </dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">How many Mesotherapy treatments will I need?
+
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-neutral-800">
+            Most mesotherapy treatments require 3-5 sessions spaced out over a period of 4-6 weeks. 
+          </dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">Are there any side effects? 
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-neutral-800">
+            After your treatment is completed, you may experience some redness and swelling at the injection sites, which should subside within a few days. Other common side effects include bruising, itching, and soreness at the injection site. Talk to our experts regarding any skin concerns you may have. 
+          </dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">What Results Can I Expect? 
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-neutral-800">
+Most patients can expect to see noticeable results within a few months. However, it is important to keep in mind that these results may not be permanent and additional touch-up sessions may be necessary down the line. Additionally, your healthcare provider will provide you with aftercare instructions following your treatment, which you should follow carefully to ensure optimal results. 
+
+Are There Any Side Effects? 
+          </dd>
+        </div>
+
+        
+
+       
+        
+
+      </dl>
+      
+  
+    </div>
+  </div>
+</div>
+<!-- END OF FAQ SECTION -->
+<HeroDecorator
+title={`From ${town} and looking for a luxury spa?`}
+sub={`Our new luxury spa opened in the City of London(Next to cannon street station) has the latest treatments at affordable prices.`}
+town={town}
+client:load
+/>
+
+
+<div class="max-w-7xl mx-auto lg:rounded-lg mb-10 overflow-hidden">
+  <ImageContentBlock
+  title="Book Your Consultation Today"
+  copy="Get in touch to find out more and speak to one of our experts."
+  image={ctaImage1}
+  href="https://www.allurespa.co.uk/treatments/mesotherapy"
+  linkText="BOOK NOW"
+/>
+</div>
+
+    
+  </main>
+</Layout>

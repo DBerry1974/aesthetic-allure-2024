@@ -1,0 +1,13 @@
+---
+interface Props {
+  color?: "keld-slate" | "white" | "keld-yellow" | "keld-yellow-alt";
+  textAlign?: "center" | "left" | "right";
+}
+const { color = "white", textAlign = "center" } = Astro.props;
+---
+
+<h2
+  class={`block text-${textAlign} text-3xl font-bold leading-8 tracking-tight text-${color} sm:text-5xl`}
+>
+  <slot />
+</h2>

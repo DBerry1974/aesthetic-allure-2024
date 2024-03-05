@@ -1,0 +1,449 @@
+---
+export const prerender = true
+import Content from "../../../components/Content/LandingContent.astro";
+import LandingSubPageHero from "../../../components/Hero/LandingSubPageHero.astro";
+import ImageContentBlock from "../../../components/ImageContentBlock.astro";
+import Section from "../../../components/Section/Section.astro";
+import LandingSectionTitle from "../../../components/Typography/LandingSectionTitle.astro";
+import Layout from "../../../layouts/LandingLayout.astro";
+import blogBanner from "../../../assets/images/microcurrent1.webp";
+import BlogPostListing from "../../../components/Blog/BlogPostListing.astro";
+import headImage from "../../../assets/images/blog/dermal1.jpg";
+import headImage2 from "../../../assets/images/blog/blog-img1.jpg";
+import headImage3 from "../../../assets/images/blog/hifu.jpeg";
+import mesoImage2 from "../../../assets/images/mesotherapy1.webp";
+import mesoImage3 from "../../../assets/images/mesotherapy3.jpg";
+import mesoImage4 from "../../../assets/images/mesotherapy4.jpg";
+import mesoImage6 from "../../../assets/images/mesotherapy6.jpg";
+
+import microImage2 from "../../../assets/images/microcurrent2.jpg";
+import microImage3 from "../../../assets/images/microcurrent3.jpg";
+import microImage4 from "../../../assets/images/microcurrent4.jpg";
+import microImage5 from "../../../assets/images/microcurrent5.jpg";
+import microImage6 from "../../../assets/images/microcurrent6.jpg";
+
+import cost from "../../../assets/images/cost.jpg";
+import ctaImage1 from "../../../assets/images/homepage-face.jpeg";
+import versatile from "../../../assets/images/mesotherapy5.jpg";
+import awiImage3 from "../../../assets/images/awi3.jpg";
+import quick from "../../../assets/images/stopwatch.jpg";
+import HeroDecorator from "../../../components/Decoraters/";
+
+import { Image } from 'astro:assets'
+
+import { getSpecificTowns } from "../../../lib/getTowns";
+
+export async function getStaticPaths() {
+  const towns = await getSpecificTowns();
+
+  const paths = [];
+  for (let i = 0; i < towns.length; i++) {
+    const town = towns[i];
+    let path = town
+      .toLowerCase()
+      .replace(/ /g, "-")
+      .replace(/\`/, "")
+      .replace(/\./, "")
+      .replace(/\'/, "");
+    paths.push({ params: { slug: path }, props: { town } });
+  }
+
+  return paths;
+}
+
+const { town } = Astro.props;
+---
+
+<Layout title="Microcurrent from Aesthetic Allure Medical Spa and Skin Clinic" description="Microcurrent treatment from Aesthetic Allure Medical Spa and Skin Clinic. Comprehensive services help achieve optimal skin health and beauty goals.">
+  
+  <LandingSubPageHero
+    heading="Microcurrent"
+  
+    headerCopy={`Are you looking for a way to improve your facial appearance without the need for surgery or other invasive treatments? If so, then microcurrent is a great option. Microcurrent is an innovative facial technology that uses tiny electrical currents to stimulate the muscles of the face, helping to contour, tone and firm the skin. Each session usually lasts between 20 minutes and an hour and can be done while you remain awake throughout the treatment – allowing you to go back to your usual activities afterwards with no downtime. So if you want to look younger without any major commitments or risks, microcurrent could be just what you’re looking for.`}
+    image={blogBanner}
+  />
+ <main>
+
+ 
+
+
+  <!--Start of section--><div class="max-w-7xl my-10 mx-auto px-4 lg:px-0">
+    <LandingSectionTitle classes="pb-4 mt-6 text-left">Microcurrent treatment {town}
+     
+    </LandingSectionTitle>
+    <LandingSectionTitle classes="pb-4 mt-6 text-left">
+        What is Microcurrent Facial Treatment?
+           
+       </LandingSectionTitle>
+    <div
+         class="text-neutral-800 grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+       >
+       <div class="group relative flex flex-col">
+
+    <p class="mb-2 ">
+        Microcurrent facial treatment is a non-invasive and painless aesthetic treatment used to restore the skin's natural beauty and health. This type of facial treatment uses low level electrical current that mimics the body's natural current, which helps to stimulate the production of collagen and elastin, reduce wrinkles and fine lines, lift, firm, and tone the skin. 
+
+</p>
+    <p class="mb-2">
+        Additionally, it helps to improve blood circulation to the face while providing a gentle massage that relaxes facial muscles and increases lymphatic drainage. It is designed to give you long-term anti-aging benefits without any downtime. 
+    </p>
+    <p class="mb-2">
+        Microcurrent treatments can be customized based on your individual needs and skin type, making them an effective solution for a range of skin problems including sun damage, wrinkles, sagging skin, and hyperpigmentation. With regular treatments, you can enjoy improved overall tone and texture for healthier, youthful-looking skin. 
+    </p>
+    <p class="mb-2">
+        Our experienced team of aestheticians performs microcurrent facial treatment with modern equipment to ensure the best possible results. 
+    </p> 
+    <p class="mb-2">
+        We understand the importance of tailoring our services to meet each patient’s individual needs and preferences, so we take the time to assess your skin and create a customized plan that will help you achieve your desired goals. 
+    </p> 
+    <p class="mb-2">
+        From lifting, firming, and toning to reducing wrinkles and fine lines, we have the expertise to provide you with the best possible results. Contact us today to learn more and get started on your journey towards healthier, younger-looking skin.
+    </p>
+   
+    </div>
+    <div class="group relative flex flex-col overflow-hidden">
+      
+      <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+        <Image
+        class="h-full w-full object-cover rounded-lg  shadow-lg mb-2"
+        src={microImage2}
+        alt="microneedling"
+        width={800}
+        height={600}
+        format={"webp"}
+      />
+      
+      <h4 class="text-xs mt-2 text-right hidden md:block">Combat Aging Skin with Microcurrent Treatment
+
+
+      </h4>
+      </div>
+      <h4 class="text-xs mt-2 text-right md:hidden"> Combat Aging Skin with Microcurrent Treatment
+
+      </h4>
+    </div>
+    </div>
+  </div><!-- End of Section -->
+
+  <div class="max-w-7xl mx-auto lg:rounded-lg mb-10 overflow-hidden">
+    <ImageContentBlock
+    title="Book Your Consultation Today"
+    copy="Get in touch to find out more and speak to one of our experts."
+    image={ctaImage1}
+    href="https://www.allurespa.co.uk/treatments/microcurrent"
+    linkText="BOOK NOW"
+  />
+  </div>
+
+   <!--Start of section--><div class="max-w-7xl my-10 mx-auto px-4 lg:px-0">
+    <LandingSectionTitle classes="pb-4 mt-6 text-left">The Benefits of Microcurrent  
+    </LandingSectionTitle>
+    <div
+         class="text-neutral-800 grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+       >
+       <div class="group relative flex flex-col">
+
+    <p class="mb-2 ">
+        Microcurrent treatment is a non-invasive cosmetic procedure that uses low-level electrical currents to improve skin health and appearance. 
+    </p>
+    <p class="mb-2">
+        Here are some of the benefits of microcurrent treatment:
+    </p>
+  
+    <ul class="list-disc list-inside">
+        <li class="mb-2">Reduces Fine Lines and Wrinkles
+            </li>
+
+        <li class="mb-2">Lifts Sagging Skin
+           </li>
+        <li class="mb-2"> Improves Skin Hydration
+            </li>
+        <li class="mb-2">Reduces Puffiness and Dark Circles
+           </li>
+        <li class="mb-2"> Improves Product Absorption
+            </li>
+        <li class="mb-2"> Non-Invasive and Painless
+            </li>
+        <li class="mb-2">Reduces the appearance of acne and acne scars
+           
+        </li>
+        <li class="mb-2"> Improves circulation and promotes lymphatic drainage
+             </li>
+        <li class="mb-2">Improves muscle tone and firmness, giving the face a more lifted and sculpted appearance.
+            </li>
+        <li class="mb-2">Enhances the production of ATP, which is essential for cellular energy and metabolism
+           
+            </li>
+
+    </ul>
+
+
+    
+    </div>
+    <div class="group relative flex flex-col overflow-hidden">
+      
+      <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+        <Image
+        class="h-full w-full object-cover rounded-lg  shadow-lg mb-2"
+        src={microImage3}
+        alt="microcurrent"
+        width={800}
+        height={600}
+        format={"webp"}
+      />
+      
+      <h4 class="text-xs mt-2 text-right hidden md:block">Microcurrent Facials -the microcurrent device is used to boost collagen and elastin production
+      </h4>
+      </div>
+      <h4 class="text-xs mt-2 text-right md:hidden">Microcurrent Facials -the microcurrent device is used to boost collagen and elastin production
+      </h4>
+    </div>
+    </div>
+    
+  </div><!-- End of Section -->
+   
+
+ <!--Start of section--><div class="max-w-7xl mt-0 pb-0 mb-10 mx-auto px-4 lg:px-0 text-neutral-800">
+    
+  <LandingSectionTitle classes="pb-4 text-left">How Does Microcurrent Work?
+  </LandingSectionTitle>
+  <div
+       class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+     >
+     <div class="group relative flex flex-col">
+
+  <p class="mb-2">
+    Microcurrent technology works by sending tiny electrical currents into the underlying facial muscles to stimulate them. This stimulation helps increase the production of collagen and elastin, two substances that are essential for youthful-looking skin. 
+</p>
+  <p class="mb-2">
+    The electrical current also triggers the release of adenosine triphosphate (ATP), which is a molecule responsible for carrying energy to the cells. This ATP helps energize and improve the skin’s cellular metabolism, resulting in improved tone, texture and firmness. 
+</p>
+  <p class="mb-2">
+    The stimulation also helps reduce inflammation and improves circulation, which can help to reduce puffiness and dark circles under the eyes. Microcurrent treatments are typically done on a weekly or monthly basis depending on your individual needs. 
+</p>
+  <p class="mb-2">
+    The results of the treatment can be seen immediately, and they are cumulative so that each treatment builds upon the last. After a series of treatments, patients typically notice an overall improvement in their skin’s tone, texture and elasticity. 
+</p>
+<p class="mb-2">
+    Microcurrent treatments are safe for all skin tones and types, though those with sensitive or reactive skin should consult a doctor before starting treatment. 
+</p>
+<p class="mb-2">
+    The treatments are also not recommended for those who have metal or electronic implants, such as pacemakers, as the electrical current can interfere with the device. Microcurrent is a safe and effective option for anyone looking to improve their skin’s appearance without undergoing surgery. 
+</p>
+  
+  
+  </div>
+  <div class="group relative flex flex-col overflow-hidden">
+    
+    <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+      <Image
+      class="h-full w-full object-cover rounded-lg  shadow-lg mb-10"
+      src={microImage4}
+      alt="microneedling"
+      width={800}
+      height={600}
+      format={"webp"}
+    />
+    
+    
+    </div>
+    
+  </div>
+  </div>
+  
+</div><!-- End of Section -->
+
+
+<div class="max-w-7xl mx-auto lg:rounded-lg mb-20 overflow-hidden">
+  <ImageContentBlock
+  title="Book Your Consultation Today"
+  copy="Get in touch to find out more and speak to one of our experts."
+  image={ctaImage1}
+  href="https://www.allurespa.co.uk/treatments/microcurrent"
+  linkText="BOOK NOW"
+/>
+</div>
+
+ <!--Start of section--><div class="max-w-7xl mt-0 pb-0 mb-10 mx-auto px-4 lg:px-0 text-neutral-800">
+  <LandingSectionTitle classes="pb-4 mt-6 text-left">What Can You Expect from a Microcurrent Treatment? 
+  </LandingSectionTitle>
+  <div
+  class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+>
+<div class="group relative flex flex-col">
+
+  
+  <p class="mb-2">
+    Microcurrent treatment is a safe and non-invasive cosmetic treatment that is used to help rejuvenate the skin. It works by sending tiny electrical impulses through the skin, which stimulates muscle contractions, collagen production, and increases blood circulation. This allows the skin to look brighter, firmer, and smoother over time. 
+</p>
+  <p class="mb-2">
+    The treatment is customizable depending on the patient’s needs and goals, so results can vary from person to person. Generally, patients can expect a more youthful and rested appearance after just one session. Over time, with repeated treatments, skin tone and texture may improve as well as muscle tightening and facial contouring. Results generally last for several months, however, this can vary from person to person. 
+</p>
+  <p class="mb-2">
+    It is important to note that microcurrent treatments are not a substitute for medical procedures such as Botox or fillers and should be used in conjunction with other treatments for the best results. Additionally, it is recommended to consult a professional before undergoing any treatment in order to determine if it is right for you. 
+</p>
+  <p class="mb-2">
+    Overall, microcurrent treatments can be an effective way to help improve skin health and appearance with minimal downtime. With proper care and maintenance after each session, patients can enjoy improved skin tone, texture, and overall youthfulness for months to come.
+</p>
+  
+  </div>
+  <div class="group relative flex flex-col overflow-hidden">
+    
+    <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+      <Image
+      class="h-full w-full object-cover rounded-lg shadow-lg mb-2"
+      src={microImage5}
+      alt="microcurrent"
+      width={800}
+      height={600}
+      format={"webp"}
+    />
+   
+    </div>
+   
+  </div>
+  </div>
+ 
+</div><!-- End of Section -->
+
+<!--Start of section--><div class="max-w-7xl mt-0 pb-0 mb-10 mx-auto px-4 lg:px-0 text-neutral-800">
+  <LandingSectionTitle classes="pb-4 mt-6 text-left">Microcurrent Treatment: Instantly Lift and Revitalize Your Skin
+</LandingSectionTitle>
+  <div
+  class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+>
+<div class="group relative flex flex-col">
+
+  
+  <p class="mb-2">
+    Microcurrent treatment is a popular skincare treatment that involves using microcurrent devices to deliver low-level electrical currents to the skin. 
+</p>
+  <p class="mb-2">
+    This non-invasive procedure is designed to stimulate the muscles in the face and neck, promoting lymphatic drainage massage and enhancing blood circulation.
+</p>
+  <p class="mb-2">
+    One of the benefits of microcurrent treatment is that it can provide immediate results. Patients often notice a visible improvement in skin tone and texture after just one session. The treatment helps to reduce the appearance of fine lines and wrinkles, lift sagging skin, and improve skin hydration.
+</p>
+  <p class="mb-2">
+    In addition to its cosmetic benefits, microcurrent treatment also helps to promote lymphatic drainage, which can be beneficial for overall health. The lymphatic system is responsible for removing toxins and waste from the body, and microcurrent treatment can help to stimulate lymphatic flow and improve the body's ability to eliminate waste.
+</p>
+  <p class="mb-2">
+    Overall, microcurrent treatment is a safe and effective way to improve skin health and appearance. It is a non-invasive alternative to more invasive cosmetic procedures and can provide immediate results. If you're looking for a way to enhance your skincare routine and achieve a more youthful, radiant complexion, microcurrent treatment may be worth considering.
+  </p>
+  
+  </div>
+  <div class="group relative flex flex-col overflow-hidden">
+    
+    <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+      <Image
+      class="h-full w-full object-cover rounded-lg shadow-lg mb-2"
+      src={microImage6}
+      alt="microcurrent"
+      width={800}
+      height={600}
+      format={"webp"}
+    />
+   
+    </div>
+    
+  </div>
+  </div>
+  
+</div><!-- End of Section -->
+
+<!-- START OF FAQ SECTION -->
+
+<div class="bg-gray-50 mb-20">
+  <div class="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8">
+
+
+    <LandingSectionTitle classes="pb-4 text-left">Microcurrent Treatment FAQ - All You Need to Know About Microcurrent Facials 
+    </LandingSectionTitle>    
+    
+ 
+    <div>
+      <dl class="space-y-16 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-16 sm:space-y-0 lg:grid-cols-3 lg:gap-x-10">
+      
+
+        
+
+        <!-- More questions... -->
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">  What is Microcurrent?
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-neutral-800">
+           
+            Microcurrent is a facial treatment that uses tiny currents of electricity to stimulate the muscles of the face. This technology has been shown to help contour, tone and firm the skin, providing an improved overall appearance. Each session typically lasts between 20 minutes and an hour, and does not require any surgery.        </dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900"> How does Microcurrent work?
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-neutral-800">
+           
+            During a session, the technician will place small electrodes on your face in order to send microcurrents through the skin. This sends electrical impulses to the muscles of the face and helps to stimulate them, which leads to contouring, toning and firming of the skin.</dd>
+        </div>
+
+        
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900"> Is Microcurrent facial safe? 
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-neutral-800">
+           
+            Yes, Microcurrent is a safe and non-invasive procedure that has been approved by the FDA. It should always be done by a qualified professional to ensure proper technique and safety protocols are followed. Although microcurrent facials are not recommended for those with severe acne.</dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">What are the benefits of Microcurrent?
+        </dt>
+          <dd class="mt-2 text-base leading-7 text-neutral-800">
+            Microcurrent has been shown to help reduce the appearance of wrinkles and fine lines, as well as provide a firmer and more toned skin. It can also help improve circulation and promote collagen production, leading to improved overall skin health. </dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900"> How often should I get a Microcurrent treatment?
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-neutral-800">
+           
+            The frequency of treatments will vary depending on your individual goals and needs. As a general rule, it is recommended to have at least one session per month in order to maintain the results of the treatment. However, more frequent sessions may be necessary to achieve the desired outcome. </dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">Are there any side effects to Microcurrent?
+        </dt>
+          <dd class="mt-2 text-base leading-7 text-neutral-800">
+            While there are no serious side effects associated with Microcurrent, some people may experience a slight redness or tingling sensation during the session. This should subside shortly after the treatment is over. If these symptoms persist or worsen, it is important to contact your technician right away. </dd>
+        </div>  
+
+       
+        
+
+      </dl>
+      
+  
+    </div>
+  </div>
+</div>
+<!-- END OF FAQ SECTION -->
+<HeroDecorator
+title={`From ${town} and looking for a luxury spa?`}
+sub={`Our new luxury spa opened in the City of London(Next to cannon street station) has the latest treatments at affordable prices.`}
+town={town}
+client:load
+/>
+
+<div class="max-w-7xl mx-auto lg:rounded-lg mb-10 overflow-hidden">
+  <ImageContentBlock
+  title="Book Your Consultation Today"
+  copy="Get in touch to find out more and speak to one of our experts."
+  image={ctaImage1}
+  href="https://www.allurespa.co.uk/treatments/microcurrent"
+  linkText="BOOK NOW"
+/>
+</div>
+
+    
+  </main>
+  
+</Layout>

@@ -1,0 +1,483 @@
+---
+
+export const prerender = true
+import Content from "../../../components/Content/LandingContent.astro";
+import LandingSubPageHero from "../../../components/Hero/LandingSubPageHero.astro";
+import ImageContentBlock from "../../../components/ImageContentBlock.astro";
+import Section from "../../../components/Section/Section.astro";
+import LandingSectionTitle from "../../../components/Typography/LandingSectionTitle.astro";
+import Layout from "../../../layouts/LandingLayout.astro";
+import blogBanner from "../../../assets/images/microneedling1.webp";
+import BlogPostListing from "../../../components/Blog/BlogPostListing.astro";
+import headImage from "../../../assets/images/blog/dermal1.jpg";
+import headImage2 from "../../../assets/images/blog/blog-img1.jpg";
+import headImage3 from "../../../assets/images/blog/hifu.jpeg";
+import mesoImage2 from "../../../assets/images/mesotherapy1.webp";
+import mesoImage3 from "../../../assets/images/mesotherapy3.jpg";
+import mesoImage4 from "../../../assets/images/mesotherapy4.jpg";
+import mesoImage6 from "../../../assets/images/mesotherapy6.jpg";
+
+import microImage2 from "../../../assets/images/microneedling2.jpg";
+import microImage3 from "../../../assets/images/microneedling3.jpg";
+import microImage4 from "../../../assets/images/microneedling4.jpg";
+import microImage5 from "../../../assets/images/microneedling5.jpg";
+import microImage6 from "../../../assets/images/microneedling6.jpg";
+
+import cost from "../../../assets/images/cost.jpg";
+import ctaImage1 from "../../../assets/images/homepage-face.jpeg";
+import versatile from "../../../assets/images/mesotherapy5.jpg";
+import awiImage3 from "../../../assets/images/awi3.jpg";
+import quick from "../../../assets/images/stopwatch.jpg";
+import HeroDecorator from "../../../components/Decoraters/";
+
+import { Image } from 'astro:assets'
+
+import { getSpecificTowns } from "../../../lib/getTowns";
+
+export async function getStaticPaths() {
+  const towns = await getSpecificTowns();
+
+  const paths = [];
+  for (let i = 0; i < towns.length; i++) {
+    const town = towns[i];
+    let path = town
+      .toLowerCase()
+      .replace(/ /g, "-")
+      .replace(/\`/, "")
+      .replace(/\./, "")
+      .replace(/\'/, "");
+    paths.push({ params: { slug: path }, props: { town } });
+  }
+
+  return paths;
+}
+
+const { town } = Astro.props;
+---
+
+<Layout title="Micro-needling from Aesthetic Allure Medical Spa and Skin Clinic" description="Micro-needling treatment from Aesthetic Allure Medical Spa and Skin Clinic. Comprehensive services help achieve optimal skin health and beauty goals.">
+  
+  <LandingSubPageHero
+    heading="Micro-needling"
+  
+    headerCopy={`Are you looking to rejuvenate your skin and achieve a radiant complexion? Micro-needling is the perfect solution for you. This innovative treatment uses tiny needles to penetrate the top layer of skin, triggering collagen production which helps reduce wrinkles and fine lines. It also helps improve the overall texture, tone, and clarity of the skin. With micro-needling, you can enjoy healthy, younger-looking skin without any downtime or surgery! Discover how this breakthrough technology can help transform your appearance today.`}
+    image={blogBanner}
+  />
+ <main>
+
+ 
+
+
+  <!--Start of section--><div class="max-w-7xl my-10 mx-auto px-4 lg:px-0">
+    <LandingSectionTitle classes="pb-4 mt-6 text-left">Micro-needling {town}
+    </LandingSectionTitle>
+    <div
+         class="text-neutral-800 grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+       >
+       <div class="group relative flex flex-col">
+
+    <p class="mb-2 ">
+        The benefits of micro-needling go beyond just improving the appearance and texture of the skin. This treatment can also help reduce the appearance of scars, stretch marks, and cellulite. 
+
+    </p>
+    <p class="mb-2">
+        It can help improve overall skin health, increase collagen production, and encourage cell turnover. 
+    </p>
+    <p class="mb-2">
+        Additionally, it can help improve the absorption of skincare products, allowing them to penetrate deeper into the skin and deliver better results.
+    </p>
+    <p class="mb-2">
+        At our clinic, we use the most advanced technology when it comes to micro-needling treatments. Our experienced professionals will work with you to customize a treatment plan that fits your needs and goals. 
+    </p> 
+    <p class="mb-2">
+        At our clinic, we use the most advanced technology when it comes to micro-needling treatments. Our experienced professionals will work with you to customize a treatment plan that fits your needs and goals. 
+    </p> 
+    <p class="mb-2">
+    With micro-needling, you can achieve beautiful, youthful skin with minimal downtime and maximum results.
+    </p>
+    <p class="mb-2">
+        With our highly experienced team, you can trust that you will be in great hands and that you’ll achieve the results you desire. Contact us today to get started!
+    </p>
+
+
+    
+    </div>
+    <div class="group relative flex flex-col overflow-hidden">
+      
+      <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+        <Image
+        class="h-full w-full object-cover rounded-lg  shadow-lg mb-2"
+        src={microImage2}
+        alt="microneedling"
+        width={800}
+        height={600}
+        format={"webp"}
+      />
+      
+      <h4 class="text-xs mt-2 text-right hidden md:block"> A microneedling treatment can help treat a number of skin conditions
+
+      </h4>
+      </div>
+      <h4 class="text-xs mt-2 text-right md:hidden"> A microneedling treatment can help treat a number of skin conditions
+      </h4>
+    </div>
+    </div>
+  </div><!-- End of Section -->
+
+  <div class="max-w-7xl mx-auto lg:rounded-lg mb-10 overflow-hidden">
+    <ImageContentBlock
+    title="Book Your Consultation Today"
+    copy="Get in touch to find out more and speak to one of our experts."
+    image={ctaImage1}
+    href="https://www.allurespa.co.uk/treatments/micro-needling"
+    linkText="BOOK NOW"
+  />
+  </div>
+
+   <!--Start of section--><div class="max-w-7xl my-10 mx-auto px-4 lg:px-0">
+    <LandingSectionTitle classes="pb-4 mt-6 text-left">The Benefits of Micro-Needling 
+    </LandingSectionTitle>
+    <div
+         class="text-neutral-800 grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+       >
+       <div class="group relative flex flex-col">
+
+    <p class="mb-2 ">
+        Micro-needling is a minimally invasive cosmetic procedure that has become one of the most popular treatments for improving skin texture and tone. 
+    </p>
+    <p class="mb-2">
+        It works by creating tiny punctures in the top layer of the skin using a specialized tool called a dermaroller or Dermapen. This process triggers the body’s natural healing response, resulting in the production of new collagen and elastin fibers.
+    </p>
+    <p class="mb-2">
+        Micro-needling is a safe, effective treatment for acne scars, sun damage, wrinkles, stretch marks, large pores, and other skin imperfections. It can be used on all areas of the body including the face, neck, chest, arms and hands. Because it is non-invasive, there is minimal risk of infection and it can be done in just one session. 
+    </p>
+    <p class="mb-2">
+        The benefits include: 
+    </p> 
+    <ul class="list-disc list-inside">
+        <li class="mb-2">Improved skin texture and tone </li>
+        <li class="mb-2">Smoother, firmer skin  </li>
+        <li class="mb-2">Reduced appearance of fine lines and wrinkles </li>
+        <li class="mb-2">Reduction in acne scars and stretch marks </li>
+        <li class="mb-2">Improved circulation and cell turnover </li>
+        <li class="mb-2">Fewer visible pores  </li>
+        <li class="mb-2">Cheaper than laser treatments  
+        </li>
+        <li class="mb-2">Reduced appearance of age spots and hyperpigmentation</li>
+
+    </ul>
+
+
+    
+    </div>
+    <div class="group relative flex flex-col overflow-hidden">
+      
+      <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+        <Image
+        class="h-full w-full object-cover rounded-lg  shadow-lg mb-2"
+        src={microImage3}
+        alt="microneedling"
+        width={800}
+        height={600}
+        format={"webp"}
+      />
+      
+      <h4 class="text-xs mt-2 text-right hidden md:block"> You can achieve brighter skin with a microneedling procedure
+      </h4>
+      </div>
+      <h4 class="text-xs mt-2 text-right md:hidden">You can achieve brighter skin with a microneedling procedure
+      </h4>
+    </div>
+    </div>
+    <p class="my-2">
+    Overall, micro-needling is an effective treatment for improving the overall health and appearance of the skin. It can be used as a stand-alone treatment or as part of a more comprehensive skin care regimen.  </p>
+  </div><!-- End of Section -->
+   
+
+ <!--Start of section--><div class="max-w-7xl mt-0 pb-0 mb-10 mx-auto px-4 lg:px-0 text-neutral-800">
+    
+  <LandingSectionTitle classes="pb-4 text-left">Transform Your Skin from Within: Rejuvenate Your Complexion 
+
+  </LandingSectionTitle>
+  <div
+       class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+     >
+     <div class="group relative flex flex-col">
+
+  <p class="mb-2">
+    Micro-needling, also known as Collagen Induction Therapy and skin needling, is a minimally invasive cosmetic treatment that has gained popularity in recent years for addressing a range of skin concerns. This treatment involves using a device with small needles to create tiny punctures in the skin, stimulating the body's natural healing process and triggering the production of collagen and elastin.
+
+</p>
+  <p class="mb-2">
+    One of the most common uses of micro-needling is to treat acne scarring. The punctures created by the needles promote the growth of new skin cells, which can help to fill in acne scars and improve the overall texture of the skin. This is especially beneficial for those with darker skin tones, who may be more prone to hyperpigmentation and scarring from acne.
+
+</p>
+  <p class="mb-2">
+    Micro-needling can also be effective for treating uneven skin tone and other skin concerns such as fine lines and wrinkles. The increased production of collagen and elastin helps to improve skin elasticity, resulting in a smoother and more youthful-looking complexion.
+
+</p>
+  <p class="mb-2">
+    While micro-needling is generally considered safe for most skin types, it's important to note that there may be some temporary redness and mild swelling following the treatment. It's also important to work with a trained and experienced professional to ensure that the treatment is tailored to your individual needs and skin type.
+
+</p>
+  
+  
+  </div>
+  <div class="group relative flex flex-col overflow-hidden">
+    
+    <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+      <Image
+      class="h-full w-full object-cover rounded-lg  shadow-lg mb-10"
+      src={microImage4}
+      alt="microneedling"
+      width={800}
+      height={600}
+      format={"webp"}
+    />
+    
+    
+    </div>
+    
+  </div>
+  </div>
+  <p class="mb-2">
+    In summary, micro-needling is a versatile treatment that can help to address a range of skin concerns, including acne scarring, uneven skin tone, and loss of skin elasticity. It's a great option for those with darker skin tones who may be more prone to scarring and hyperpigmentation from acne. If you're interested in this treatment, be sure to consult with a qualified professional to determine if it's right for you. 
+
+</p>
+</div><!-- End of Section -->
+
+
+<div class="max-w-7xl mx-auto lg:rounded-lg mb-20 overflow-hidden">
+  <ImageContentBlock
+  title="Book Your Consultation Today"
+  copy="Get in touch to find out more and speak to one of our experts."
+  image={ctaImage1}
+  href="https://www.allurespa.co.uk/treatments/micro-needling"
+  linkText="BOOK NOW"
+/>
+</div>
+
+ <!--Start of section--><div class="max-w-7xl mt-0 pb-0 mb-10 mx-auto px-4 lg:px-0 text-neutral-800">
+  <LandingSectionTitle classes="pb-4 mt-6 text-left">Younger Looking Skin Without Surgery
+
+  </LandingSectionTitle>
+  <div
+  class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+>
+<div class="group relative flex flex-col">
+
+  
+  <p class="mb-2">
+    Micro-needling is a revolutionary treatment that gives you younger-looking skin without surgery and minimal downtime. 
+  </p>
+  <p class="mb-2">
+    The process involves using a device to create microscopic punctures in the surface of your skin which promotes the production of collagen and elastin. This helps to reduce the appearance of wrinkles, fine lines, hyperpigmentation, and other signs of ageing. 
+  </p>
+  <p class="mb-2">
+    Additionally, the punctures created by micro-needling have been shown to improve the overall texture and tone of skin for a more youthful appearance. 
+  </p>
+  <p class="mb-2">
+    The procedure is minimally invasive and has little downtime involved so you can enjoy the benefits of younger-looking skin without taking time away from your everyday life. 
+  </p>
+  <p class="mb-2">
+    The process also encourages new cell growth, making your skin appear smoother and firmer over time. Micro-needling can be used on the face, neck, chest, and other areas of the body to help improve skin tone, texture, and firmness. It is a safe procedure that produces results with minimum discomfort or downtime. 
+  </p>
+  <p class="mb-2">
+    Because it is non-invasive, micro-needling can be used as a preventative measure or to restore the health and beauty of ageing skin. It is also an excellent treatment for individuals who want to maintain their youthful appearance without surgery or downtime. 
+
+  </p>
+  
+ 
+  </div>
+  <div class="group relative flex flex-col overflow-hidden">
+    
+    <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+      <Image
+      class="h-full w-full object-cover rounded-lg shadow-lg mb-2"
+      src={microImage5}
+      alt="microneedling"
+      width={800}
+      height={600}
+      format={"webp"}
+    />
+   
+    </div>
+   
+  </div>
+  </div>
+  <p class="mb-2">
+    To achieve optimal results, multiple treatments may be necessary but you will start to see an improvement in your skin's health and appearance after just one treatment. 
+  </p>
+</div><!-- End of Section -->
+
+<!--Start of section--><div class="max-w-7xl mt-0 pb-0 mb-10 mx-auto px-4 lg:px-0 text-neutral-800">
+  <LandingSectionTitle classes="pb-4 mt-6 text-left">Advanced Technology for Maximum Results
+
+
+  </LandingSectionTitle>
+  <div
+  class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+>
+<div class="group relative flex flex-col">
+
+  
+  <p class="mb-2">
+    Micro-needling is a form of skin rejuvenation that uses advanced technology to achieve maximum results. 
+  </p>
+  <p class="mb-2">
+    This breakthrough technology uses tiny needles to penetrate the surface of the skin and stimulate collagen production. The needles are small enough that they can reach deep into the dermal layer, reaching even deeper than laser resurfacing or chemical peels. 
+  </p>
+  <p class="mb-2">
+    This advanced technology helps to reduce signs of ageing such as fine lines, wrinkles, and sun damage. It also helps boost circulation in the area which increases oxygenation and reduces inflammation for healthier-looking skin overall. 
+  </p>
+  <p class="mb-2">
+    Micro-needling can be used on all skin types and colours with minimal risk of side effects or downtime. 
+  </p>
+  <p class="mb-2">
+    The tiny needles create microscopic channels into the surface of the skin, allowing for better absorption of topical products, improved circulation, and collagen stimulation. 
+  </p>
+  <p class="mb-2">
+    The result is a more youthful appearance with reduced signs of aging such as fine lines, wrinkles, and sun damage. Micro-needling is a safe, effective way to reduce the signs of ageing without any downtime or discomfort. 
+  </p>
+  
+  </div>
+  <div class="group relative flex flex-col overflow-hidden">
+    
+    <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+      <Image
+      class="h-full w-full object-cover rounded-lg shadow-lg mb-2"
+      src={microImage6}
+      alt="microneedling"
+      width={800}
+      height={600}
+      format={"webp"}
+    />
+   
+    </div>
+    
+  </div>
+  </div>
+  <p class="my-2">
+    The treatment can be used on all skin types and colours and is an excellent choice for those who don’t want to go through more invasive treatments like laser resurfacing or chemical peels. With the help of cutting-edge technology, this treatment can provide long-lasting results that keep skin looking youthful and healthy for years to come.  
+  </p>
+ 
+</div><!-- End of Section -->
+
+<!-- START OF FAQ SECTION -->
+
+<div class="bg-gray-50 mb-20">
+  <div class="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8">
+
+
+    <LandingSectionTitle classes="pb-4 text-left">Micro-needling FAQs 
+
+    </LandingSectionTitle>    
+    
+ 
+    <div>
+      <dl class="space-y-16 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-16 sm:space-y-0 lg:grid-cols-3 lg:gap-x-10">
+      
+
+        
+
+        <!-- More questions... -->
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900"> What is Micro-needling?
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-neutral-800">
+           
+            Micro-needling is a minimally invasive skin rejuvenation treatment that helps to improve the appearance of wrinkles, scars, and other skin issues. The procedure involves using tiny needles to create a controlled injury on the skin which prompts the body to produce new collagen and elastin resulting in a smoother, more youthful complexion.          </dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">  Is it safe? 
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-neutral-800">
+           
+           
+            Yes, micro-needling is extremely safe when performed by a trained professional. The procedure itself is minimally invasive and doesn't cause any bleeding or discomfort. Plus, the needles used are very tiny so there's minimal risk of post-procedure scarring.         </dd>
+        </div>
+
+        
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900"> What areas can be treated? 
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-neutral-800">
+            Micro-needling can be used on the face, neck, and body to treat a variety of skin issues including wrinkles, fine lines, acne scars, stretch marks, hyperpigmentation, and sun damage.
+
+          </dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900"> How long does it take to see results?</dt>
+          <dd class="mt-2 text-base leading-7 text-neutral-800">
+            The effects of micro-needling will vary depending on the individual and their skin condition, but you should begin to notice improvements within a few weeks. The best results are typically seen after receiving multiple treatments spaced out over several months.
+          </dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">Are there any side effects? 
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-neutral-800">
+            The most common side effect associated with micro-needling is redness and/or swelling. In most cases, the redness will fade within a few hours after the procedure and any swelling should resolve within a few days. Other rare side effects include infection, scarring, and changes in skin pigmentation.
+          </dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">Is there any downtime? 
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-neutral-800">
+            
+            Yes, micro-needling usually requires some level of downtime depending on the individual's skin type and the severity of their skin issues. After the procedure, it's important to avoid direct sun exposure, use sunscreen religiously, and keep the skin moisturized to prevent any irritation or further damage. We recommend avoiding any strenuous activity for at least 24 hours post-procedure as this can increase inflammation.
+          </dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900"> Does it hurt?
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-neutral-800">
+           
+            Most people don't find micro-needling to be painful, however some patients may experience minor discomfort during the procedure. This can be alleviated with a topical numbing cream or ice packs prior to treatment. </dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">Are there any skin types that should not get micro-needling?
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-neutral-800">
+            
+            Those with active acne, sunburns, warts, cold sores, open wounds or cuts, and skin infections should avoid micro-needling. Additionally, those with certain medical conditions such as diabetes and autoimmune diseases should discuss their skin care options with a healthcare professional prior to treatment. </dd>
+        </div>
+
+        
+
+       
+        
+
+      </dl>
+      
+  
+    </div>
+  </div>
+</div>
+<!-- END OF FAQ SECTION -->
+<HeroDecorator
+title={`From ${town} and looking for a luxury spa?`}
+sub={`Our new luxury spa opened in the City of London(Next to cannon street station) has the latest treatments at affordable prices.`}
+town={town}
+client:load
+/>
+
+<div class="max-w-7xl mx-auto lg:rounded-lg mb-10 overflow-hidden">
+  <ImageContentBlock
+  title="Book Your Consultation Today"
+  copy="Get in touch to find out more and speak to one of our experts."
+  image={ctaImage1}
+  href="https://www.allurespa.co.uk/treatments/micro-needling"
+  linkText="BOOK NOW"
+/>
+</div>
+
+    
+  </main>
+</Layout>

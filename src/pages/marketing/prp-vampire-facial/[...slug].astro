@@ -1,0 +1,468 @@
+---
+export const prerender = true
+import Content from "../../../components/Content/LandingContent.astro";
+import LandingSubPageHero from "../../../components/Hero/LandingSubPageHero.astro";
+import ImageContentBlock from "../../../components/ImageContentBlock.astro";
+import Section from "../../../components/Section/Section.astro";
+import LandingSectionTitle from "../../../components/Typography/LandingSectionTitle.astro";
+import Layout from "../../../layouts/LandingLayout.astro";
+import blogBanner from "../../../assets/images/prp1.webp";
+import prpImage2 from "../../../assets/images/prp2.jpg";
+import prpImage3 from "../../../assets/images/prp3.jpg";
+import prpImage4 from "../../../assets/images/prp4.jpg";
+import prpImage5 from "../../../assets/images/prp5.jpg";
+import wrinkles from "../../../assets/images/wrinkles1.jpg";
+import smooth from "../../../assets/images/smooth.jpg";
+import acne from "../../../assets/images/acne.jpg";
+
+import ctaImage1 from "../../../assets/images/homepage-face.jpeg";
+
+import { Image } from 'astro:assets'
+
+import HeroDecorator from "../../../components/Decoraters/";
+import { getSpecificTowns } from "../../../lib/getTowns";
+
+export async function getStaticPaths() {
+  const towns = await getSpecificTowns();
+
+  const paths = [];
+  for (let i = 0; i < towns.length; i++) {
+    const town = towns[i];
+    let path = town
+      .toLowerCase()
+      .replace(/ /g, "-")
+      .replace(/\`/, "")
+      .replace(/\./, "")
+      .replace(/\'/, "");
+    paths.push({ params: { slug: path }, props: { town } });
+  }
+
+  return paths;
+}
+
+const { town } = Astro.props;
+---
+
+<Layout title="PRP Vampire Facial Aesthetic Allure Medical Spa & Skin Clinic" description="PRP Vampire Facial from Aesthetic Allure Medical Spa and Skin Clinic. Comprehensive services help you achieve your skin health & beauty goals.">
+  
+  <LandingSubPageHero
+    heading="PRP Vampire Facial"
+  
+    headerCopy={`PRP Vampire facial is an incredibly popular treatment that has been growing in popularity among the beauty and wellness communities. PRP therapy, or Platelet Rich Plasma Therapy, is used to trick the body into healing and repairing itself by introducing a high concentration of platelets, growth factors, and stem cells into the skin. This helps to stimulate collagen and elastin production, increasing cell turnover to reduce the appearance of pores, blur acne scarring, and give your complexion an overall healthy glow.`}
+    image={blogBanner}
+  />
+ <main>
+
+ 
+ <!--Start of section--><div class="max-w-7xl my-10 mx-auto px-4 lg:px-0">
+    <LandingSectionTitle classes="pb-4 mt-6 text-left">PRP Vampire Facial {town}       
+    </LandingSectionTitle>
+    
+    
+    <div
+         class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+       >
+       <div class="group relative flex flex-col">
+        <LandingSectionTitle classes="pb-4 mt-6 text-left">Unlock Radiant and Youthful Skin
+        </LandingSectionTitle>
+       
+    <p class="mb-2">
+        The PRP Vampire Facial has become increasingly popular for those seeking to unlock radiant and youthful skin. This revolutionary treatment utilizes Platelet Rich Plasma Therapy (PRP) to stimulate the body’s natural healing processes. By introducing a high concentration of platelets, growth factors, and stem cells into the skin, collagen and elastin production is stimulated to improve the skin’s complexion, reduce the appearance of pores, and fade acne scarring.
+    </p>
+    <p class="mb-2">
+        The PRP Vampire Facial is much more than a quick fix or temporary solution; it helps to create long-lasting results as it works with your body’s own healing mechanisms. Whether you want to diminish wrinkles, reduce pigmentation, or give your complexion an overall healthy glow, the PRP Vampire Facial is the ideal solution. 
+    </p>
+    <p class="mb-2">
+        Get ready to unlock radiant and youthful skin with a revolutionary treatment – the PRP Vampire Facial! Contact us today to learn more about this amazing therapy.
+    </p>
+    </div>
+    <div class="group relative flex flex-col overflow-hidden">
+      
+      <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+        <Image
+        class="h-full w-full object-cover rounded-lg  shadow-lg mb-2"
+        src={prpImage2}
+        alt="PRP Vampire Facial"
+        width={800}
+        height={600}
+        format={"webp"}
+      />
+      <h4 class="text-xs text-right hidden md:block">The revolutionary Vampire Facelift  
+    </h4>
+    </div>
+    <h4 class="text-xs mt-2 text-right md:hidden">The revolutionary Vampire Facelift   
+    </h4>
+  </div>
+  </div>
+</div><!-- End of Section -->
+      
+
+
+  <div class="max-w-7xl mx-auto lg:rounded-lg mb-10 overflow-hidden">
+    <ImageContentBlock
+    title="Book Your Consultation Today"
+    copy="Get in touch to find out more and speak to one of our experts."
+    image={ctaImage1}
+    href="https://www.allurespa.co.uk/treatments/prp-vampire-facial%C2%A0"
+    linkText="BOOK NOW"
+  />
+  </div>
+
+   <!--Start of section--><div class="max-w-7xl mt-0 pb-0 mb-10 mx-auto px-4 lg:px-0">
+    
+    <LandingSectionTitle classes="pb-4 text-left">How Do PRP vampire facial treatments Work? 
+    </LandingSectionTitle>
+    <div
+         class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+       >
+       <div class="group relative flex flex-col">
+  
+    <p class="mb-2">
+        The PRP Vampire Facial works by introducing a high concentration of platelets, growth factors, and stem cells into the skin. These elements are highly concentrated and are extracted from the patient’s own blood. After being injected into the desired treatment area, these cells work with your body’s natural healing mechanisms to stimulate collagen and elastin production, increasing cell turnover and improving the skin’s overall complexion. 
+    </p>
+    <p class="mb-2">
+        The PRP Vampire Facial is an incredibly effective treatment for reducing wrinkles, diminishing pigmentation, and giving your complexion a healthy glow. This revolutionary facial can help to reduce the appearance of pores, blur acne scarring, and give you long-lasting results.
+    </p>
+    <p class="mb-2">
+        If you want to unlock radiant and youthful skin with a revolutionary treatment, the PRP Vampire Facial is for you! Contact us today to learn more about this amazing therapy.
+    </p>
+   
+    </div>
+    <div class="group relative flex flex-col overflow-hidden">
+      
+      <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+        <Image
+        class="h-full w-full object-cover rounded-lg  shadow-lg mb-10"
+        src={prpImage3}
+        alt="PRP Vampire Facial"
+        width={800}
+        height={600}
+        format={"webp"}
+      />
+      
+      <h4 class="text-xs text-right hidden md:block -mt-8">Firmer and smoother skin texture with a Vampire PRP treatment 
+      </h4>
+      </div>
+      <h4 class="text-xs mt-2 text-right md:hidden">Firmer and smoother skin texture with a Vampire PRP treatment   
+      </h4>
+    </div>
+    </div>
+  </div><!-- End of Section -->
+
+  
+
+
+     <!--START OF SECTION --> <div
+    class="mx-auto max-w-2xl  px-4 lg:max-w-7xl "
+  >
+    <LandingSectionTitle classes="pb-12 lg:py-12 md:text-center">The Benefits of PRP Vampire Facial
+    </LandingSectionTitle>
+    <p class="mb-10">
+        The PRP Vampire Facial offers numerous benefits for those looking to improve the appearance of their skin. Here are some of the main advantages of this revolutionary treatment: 
+    </p>
+    <div
+      class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+    >
+
+    <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+      <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+        <Image
+          width={1000}
+          height={600}
+          src={wrinkles}
+          alt="PRP Vampire Facial"
+          format="webp"
+          class="h-full w-full object-cover object-center sm:h-full sm:w-full"
+        />
+      </div>
+      <div class="flex flex-1 flex-col space-y-2 py-4">
+        <h3 class="text-lg font-bold text-gray-900">
+            Reduction in Wrinkles</h3>
+        <p>
+           One of the most attractive benefits of this facial is the reduction of wrinkles and fine lines. The high concentration of platelets, growth factors, and stem cells helps to stimulate collagen production which plumps the skin and reduces wrinkles.  </p>
+      </div>
+    </div>
+
+    <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+      <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+        <Image
+          width={1000}
+          height={600}
+          src={prpImage3}
+          alt="PRP Vampire Facial"
+          format="webp"
+          class="h-full w-full object-cover object-center sm:h-full sm:w-full"
+        />
+      </div>
+      <div class="flex flex-1 flex-col space-y-2 py-4">
+        <h3 class="text-lg font-bold text-gray-900">
+            Improved Skin Tone</h3>
+        <p>PRP Vampire Facial also encourages increased cell turnover, which helps to remove dead skin cells and reduce the appearance of age spots or discolouration. This results in improved skin tone and a more even complexion. </p>
+      </div>
+    </div>
+  </div>
+</div><!--END OF SECTION -->
+
+
+ <!--START OF SECTION --> <div
+ class="mx-auto max-w-2xl px-4 lg:max-w-7xl "
+ >
+   <div
+     class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+   >
+
+   <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+     <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+       <Image
+         width={1000}
+         height={600}
+         src={smooth}
+         alt="PRP Vampire Facial"
+         format="webp"
+         class="h-full w-full object-cover object-center sm:h-full sm:w-full"
+       />
+     </div>
+     <div class="flex flex-1 flex-col space-y-2 py-4">
+       <h3 class="text-lg font-bold text-gray-900">
+        Reduction of Pore Size</h3>
+       <p>
+        The PRP Vampire Facial helps to reduce the appearance of pores as it encourages increased production of collagen and elastin, which contract the pore walls. This gives your complexion a smoother look with less noticeable pores. </p>
+     </div>
+   </div>
+
+   <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+     <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+       <Image
+         width={1000}
+         height={600}
+         src={acne}
+         alt="PRP Vampire Facial"
+         format="webp"
+         class="h-full w-full object-cover object-center sm:h-full sm:w-full"
+       />
+     </div>
+     <div class="flex flex-1 flex-col space-y-2 py-4">
+       <h3 class="text-lg font-bold text-gray-900">
+        Fading of Acne Scarring
+      </h3>
+       <p>
+        The PRP Vampire Facial helps to reduce the appearance of acne scarring. The high concentration of platelets and growth factors encourages increased production of collagen, which helps to smooth out scars for a more even complexion. 
+        
+        </p>
+     </div>
+   </div>
+ </div>
+</div><!--END OF SECTION -->
+
+
+
+
+ <!--Start of section--><div class="max-w-7xl mt-0 pb-0 mb-10 mx-auto px-4 lg:px-0">
+    
+  <LandingSectionTitle classes="pb-4 text-left">What to Expect From Your Treatment 
+</LandingSectionTitle>
+  <div
+       class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+     >
+     <div class="group relative flex flex-col">
+
+  <p class="mb-2">
+    Preparing for your PRP Vampire Facial treatment is an important step in ensuring the best possible results. Before beginning, you’ll need to Talk to us with a licensed medical professional who can assess your skin and determine if this facial is right for you. 
+</p>
+  <p class="mb-2">
+    On the day of your appointment, you’ll be asked to cleanse your face and apply a topical anaesthetic to reduce any discomfort. 
+</p>
+  <p class="mb-2">
+    Your medical professional will then draw blood from your arm and place it in a special centrifuge that separates the platelets from other elements. The high concentration of platelets is then extracted and injected into the desired treatment area using a very fine needle.
+</p>
+  <p class="mb-2">
+    Overall, the treatment itself only takes about 30-60 minutes. Immediately after your appointment, you may experience some redness and swelling as well as tenderness to the touch in the treated area. 
+</p>
+<p class="mb-2">
+    However, these side effects should subside within 24 hours or so and you’ll be able to enjoy the full benefits of the treatment in a few weeks. 
+</p>
+<p class="mb-2">
+    The PRP Vampire Facial is an effective and long-lasting treatment that can give your skin a healthy, youthful glow. If you’re looking for a way to reduce wrinkles, improve skin tone, and blur acne scarring, this facial could be just what you need.
+</p>
+
+
+  
+  </div>
+  <div class="group relative flex flex-col overflow-hidden">
+    
+    <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+      <Image
+      class="h-full w-full object-cover rounded-lg  shadow-lg mb-10"
+      src={prpImage4}
+      alt="PRP Vampire Facial"
+      width={800}
+      height={600}
+      format={"webp"}
+    />
+    <h4 class="text-xs text-right hidden md:block -mt-8">PRP facial works using blood drawn from yourself
+
+    </h4>
+    </div>
+    <h4 class="text-xs mt-2 text-right md:hidden">PRP facial works using blood drawn from yourself
+
+    </h4>
+  </div>
+  </div>
+</div><!-- End of Section -->
+    
+   
+
+
+<div class="max-w-7xl mx-auto lg:rounded-lg mb-20 overflow-hidden">
+  <ImageContentBlock
+  title="Book Your Consultation Today"
+  copy="Get in touch to find out more and speak to one of our experts."
+  image={ctaImage1}
+  href="https://www.allurespa.co.uk/treatments/prp-vampire-facial%C2%A0"
+  linkText="BOOK NOW"
+/>
+</div>
+
+ 
+
+<!--Start of section--><div class="max-w-7xl mt-0 pb-0 mb-10 mx-auto px-4 lg:px-0">
+    
+  <LandingSectionTitle classes="pb-4 text-left">Is a PRP Vampire Facial Right for You? 
+</LandingSectionTitle>
+  <div
+       class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+     >
+     <div class="group relative flex flex-col">
+
+  <p class="mb-2">
+    The PRP Vampire Facial is a revolutionary facial treatment that has many benefits and can help to reduce the appearance of wrinkles, improve skin tone, reduce pore size and fade acne scarring. But before booking an appointment, it is important to consider if this facial is right for you.
+</p>
+  <p class="mb-2">
+    First of all, it's important to note that the PRP Vampire Facial is not suitable for those with certain medical conditions or allergies. It is also important to ensure that you have a consultation with a licensed medical professional prior to booking an appointment to assess your skin and determine if this treatment is right for you.
+</p>
+  <p class="mb-2">
+    It's also important to consider the potential risks and side effects associated with this treatment. Most people experience some redness and swelling immediately after the treatment, as well as tenderness to the touch in the treated area. However, these side effects should subside within 24 hours or so and you’ll be able to enjoy the full benefits of the treatment in a few weeks.
+</p>
+  <p class="mb-2">
+    Overall, if you are looking for a way to reduce wrinkles, improve skin tone, and blur acne scarring, the PRP Vampire Facial could be just what you need. Contact us today to learn more about this revolutionary facial treatment and see if it’s right for you.
+</p>
+ 
+  
+  </div>
+  <div class="group relative flex flex-col overflow-hidden">
+    
+    <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+      <Image
+      class="h-full w-full object-cover rounded-lg  lg:mt-10 shadow-lg mb-10"
+      src={prpImage5}
+      alt="PRP Vampire Facial"
+      width={800}
+      height={600}
+      format={"webp"}
+    />
+    <h4 class="text-xs text-right hidden md:block -mt-8">PRP may also speed up wound healing
+    </h4>
+    </div>
+    <h4 class="text-xs mt-2 text-right md:hidden">PRP may also speed up wound healing
+    </h4>
+  </div>
+  </div>
+</div><!-- End of Section -->
+
+
+
+<!-- START OF FAQ SECTION -->
+
+<div class="bg-gray-50 mb-20">
+  <div class="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8">
+
+
+    <LandingSectionTitle classes="pb-4 text-left">PRP Vampire Facial FAQ
+    </LandingSectionTitle>    
+ 
+    <div>
+      <dl class="space-y-16 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-16 sm:space-y-0 lg:grid-cols-3 lg:gap-x-10">
+      
+
+        
+
+        <!-- More questions... -->
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">What Is a PRP Vampire Facial? 
+        </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">
+            A PRP Vampire Facial (also known as Platelet Rich Plasma Therapy) is a revolutionary facial treatment that uses an injection of platelets, growth factors, and stem cells to promote cell turnover and collagen production for a more even complexion, smaller pores, minimized acne scars, and healthier looking skin.</dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">How Does PRP Vampire Facial Work? 
+        </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">
+            The process of a PRP Vampire Facial begins with a blood draw from the patient’s arm. This sample is placed in a centrifuge to separate the platelets from other elements in the blood. The high concentration of scarring-reducing platelet-rich plasma is then injected into the desired areas of the face using a very fine needle.
+           </dd>
+        </div>
+
+        
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">Is the PRP Vampire Facial Safe? 
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">
+            Yes, when administered by a licensed medical professional, PRP Vampire Facials are considered to be safe and effective treatments with minimal risks associated. However, it is important to have a consultation prior to treatment to assess your skin and determine if the procedure is right for you.</dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">What Are the Side Effects of PRP Vampire Facial?</dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">
+            
+            Immediately following the treatment, patients may experience redness and tenderness in the treated area, but these side effects should subside within 24 hours.</dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">How Long Does a PRP Vampire Facial Take? </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">
+            
+            A PRP Vampire Facial typically take 30-45 minutes to complete, depending on the number of areas to be treated and the size of the areas.</dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">How Soon Will I See the Results? </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">
+            
+            The full benefits of a PRP Vampire Facial may not be seen for up to 4-6 weeks following the procedure. However, some patients have reported seeing an improvement in their skin tone and texture within a few days of treatment! 
+            
+            Our experts will also tell you how many treatments you will need to see the full benefits. </dd>
+        </div>
+
+        
+
+        </dl>
+      
+  
+    </div>
+    <p class="mt-10">
+        Experience the transformative effects of PRP treatments, the ultimate cosmetic treatment for achieving facial rejuvenation and a flawless overall skin tone. This cutting-edge procedure is designed to enhance the appearance of your skin, leaving you with a youthful, radiant glow!</p>
+  </div>
+  
+</div>
+<!-- END OF FAQ SECTION -->
+<HeroDecorator
+title={`From ${town} and looking for a luxury spa?`}
+sub={`Our new luxury spa opened in the City of London(Next to cannon street station) has the latest treatments at affordable prices.`}
+town={town}
+client:load
+/>
+
+<div class="max-w-7xl mx-auto lg:rounded-lg mb-10 md:mt-0 overflow-hidden">
+  <ImageContentBlock
+  title="Book Your Consultation Today"
+  copy="Get in touch to find out more and speak to one of our experts."
+  image={ctaImage1}
+  href="https://www.allurespa.co.uk/treatments/prp-vampire-facial%C2%A0"
+  linkText="BOOK NOW"
+/>
+</div>
+
+    
+  </main>
+</Layout>

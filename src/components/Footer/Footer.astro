@@ -1,0 +1,65 @@
+---
+import Facebook from "../../icons/Facebook.astro";
+import Instagram from "../../icons/Instagram.astro";
+import Twitter from "../../icons/Twitter.astro";
+---
+
+<footer class="bg-neutral-800">
+  <div class="mx-auto max-w-7xl overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
+    <nav class="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
+      <div class="px-5 py-2">
+        <a href="/about" class="text-base text-white hover:text-rose-200"
+          >About</a
+        >
+      </div>
+
+      <div class="px-5 py-2">
+        <a href="/treatments" class="text-base text-white hover:text-rose-200"
+          >Treatments</a
+        >
+      </div>
+
+      <div class="px-5 py-2">
+        <a href="/blog" class="text-base text-white hover:text-rose-200">Blog</a
+        >
+      </div>
+
+      <div class="px-5 py-2">
+        <a href="/contact" class="text-base text-white hover:text-rose-200"
+          >Contact</a
+        >
+      </div>
+      <div class="px-5 py-2">
+        <a href="/terms-and-conditions" class="text-base text-white hover:text-rose-200"
+          >Terms & Conditions</a
+        >
+      </div>
+      <div class="px-5 py-2">
+        <a href="/privacy-policy" class="text-base text-white hover:text-rose-200"
+          >Privacy Policy</a
+        >
+      </div>
+    </nav>
+    <div class="mt-8 flex justify-center space-x-6">
+      <a href="https://facebook.com/aestheticallureuk" class="text-white hover:text-rose-200">
+        <Facebook />
+      </a>
+
+      <a href="https://instagram.com/aestheticallureuk" class="text-white hover:text-rose-200">
+        <Instagram />
+      </a>
+
+     
+    </div>
+    <p class="mt-8 text-center text-base text-gray-400">
+      &copy; {new Date(Date.now()).getFullYear()} Aesthetic Allure. All rights reserved.
+    </p>
+    <p class="mt-8 text-center text-base text-gray-400">
+      Powered by <a
+        href="/marketing"
+      >
+        Digital Miracle
+      </a>
+    </p>
+  </div>
+</footer>

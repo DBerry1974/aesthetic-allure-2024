@@ -1,0 +1,43 @@
+---
+import logo from "../../assets/logos/logo.svg";
+import FacebookIcon from "../../icons/Facebook.astro";
+import InstagramIcon from "../../icons/Instagram.astro";
+import TwitterIcon from "../../icons/Twitter.astro";
+import { MenuButton } from "./MenuButton";
+---
+
+<header class="z-20 sticky top-0 shadow-sm">
+  <nav aria-label="Top" class="bg-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div
+        class="grid grid-cols-2 sm:grid-cols-3 h-32 items-center justify-between"
+      >
+        <div class="hidden sm:flex">
+          <a href="https://facebook.com/aestheticallureuk" class="hover:text-rose-200 mr-2">
+            <FacebookIcon />
+          </a>
+          
+          <a href="https://instagram.com/aestheticallureuk" class="hover:text-rose-200">
+            <InstagramIcon />
+          </a>
+        </div>
+
+        <div class="lg:flex lg:flex-1 lg:items-center lg:justify-center">
+          <a href="/">
+            <span class="sr-only">Aesthetic Allure logo</span>
+            <img
+              class="h-24"
+              src={logo}
+              alt="Main logo and link to home page"
+            />
+          </a>
+        </div>
+
+        <div class="relative z-10 flex items-center justify-end">
+          <!-- Mobile menu button -->
+          <MenuButton client:idle />
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

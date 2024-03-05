@@ -1,0 +1,54 @@
+---
+import { Image } from 'astro:assets'
+import category1 from "../../assets/images/treatments/category1.jpeg";
+import category2 from "../../assets/images/treatments/category2.jpeg";
+---
+
+<div
+  class="grid min-h-full grid-cols-1 grid-rows-2 lg:grid-cols-2 lg:grid-rows-1"
+>
+  <div class="relative flex">
+    <Image
+      src={category1}
+      alt="Treatment"
+      class="absolute inset-0 h-full w-full object-cover object-center"
+    />
+    <div
+      class="relative flex w-full flex-col items-start justify-end bg-black bg-opacity-40 p-8 sm:p-12"
+    >
+      <h2 class="text-lg font-medium text-white text-opacity-75">
+        Face Treatments
+      </h2>
+      <p class="mt-1 text-2xl font-medium text-white">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      </p>
+      <a
+        href="#"
+        class="mt-4 rounded-md bg-white py-2.5 px-4 text-sm font-medium text-gray-900 hover:bg-gray-50"
+        >Shop now</a
+      >
+    </div>
+  </div>
+  <div class="relative flex">
+    <Image
+      src={category2}
+      alt="Image treatment"
+      class="absolute inset-0 h-full w-full object-cover object-center"
+    />
+    <div
+      class="relative flex w-full flex-col items-start justify-end bg-black bg-opacity-40 p-8 sm:p-12"
+    >
+      <h2 class="text-lg font-medium text-white text-opacity-75">
+        Skin Treatments
+      </h2>
+      <p class="mt-1 text-2xl font-medium text-white">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      </p>
+      <a
+        href="#"
+        class="mt-4 rounded-md bg-white py-2.5 px-4 text-sm font-medium text-gray-900 hover:bg-gray-50"
+        >Shop now</a
+      >
+    </div>
+  </div>
+</div>

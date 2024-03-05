@@ -1,0 +1,103 @@
+---
+import Content from "../components/Content/Content.astro";
+import Footer from "../components/Footer/Footer.astro";
+import SubPageHero from "../components/Hero/SubPageHero.astro";
+import Navbar from "../components/Navigation/Navbar.astro";
+import { SlideOutMenu } from "../components/Navigation/SlideOutMenu";
+import Section from "../components/Section/Section.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    /><link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@500;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={frontmatter.description} />
+    <title>{frontmatter.title}</title>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9NZDXNZD3B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9NZDXNZD3B');
+</script>
+  </head>
+  <body>
+    <Navbar />
+    <SubPageHero
+      heading={frontmatter.title}
+      subheading=""
+      headerCopy={frontmatter.description}
+      image={frontmatter.featuredImage}
+    />
+    <Section background="white" gutterBottom>
+      <Content modifiers="prose-headings:font-serif prose-neutral">
+        <slot />
+      </Content>
+    </Section>
+    <SlideOutMenu client:idle />
+    <Footer />
+
+    <script is:inline src="//widget.simplybook.it/v2/widget/widget.js"></script>
+    <script is:inline>
+      var widget = new SimplybookWidget({
+        widget_type: "button",
+        url: "https://aestheticallure.simplybook.it",
+        theme: "minimal",
+        theme_settings: {
+          timeline_show_end_time: "1",
+          timeline_modern_display: "as_slots",
+          hide_company_label: "0",
+          timeline_hide_unavailable: "1",
+          hide_past_days: "0",
+          sb_base_color: "#e83d5b",
+          btn_color_1: "#e83d5b,#e83d5b,#e83d5b",
+          link_color: "#e49092",
+          display_item_mode: "list",
+          body_bg_color: "#ffffff",
+          sb_review_image: "2",
+          sb_review_image_preview:
+            "/uploads/aestheticallure/image_files/preview/2cda1347ea2b849e08cc460b91d4f51d.png",
+          dark_font_color: "#2b212b",
+          light_font_color: "#ffffff",
+          sb_company_label_color: "#e49092",
+          hide_img_mode: "1",
+          sb_busy: "#aaa6aa",
+          sb_available: "#2b212b",
+        },
+        timeline: "modern",
+        datepicker: "top_calendar",
+        is_rtl: false,
+        app_config: {
+          clear_session: 0,
+          allow_switch_to_ada: 0,
+        },
+        button_title: "Book now",
+        button_background_color: "#e83d5b",
+        button_text_color: "#ffffff",
+        button_position: "right",
+        button_position_offset: "55%",
+      });
+    </script>
+  </body>
+</html>

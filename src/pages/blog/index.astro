@@ -1,0 +1,70 @@
+---
+import Content from "../../components/Content/Content.astro";
+import SubPageHero from "../../components/Hero/SubPageHero.astro";
+import Section from "../../components/Section/Section.astro";
+import SectionTitle from "../../components/Typography/SectionTitle.astro";
+import Layout from "../../layouts/Layout.astro";
+import blogBanner from "../../assets/images/model-stare.jpeg";
+import BlogPostListing from "../../components/Blog/BlogPostListing.astro";
+import headImage from "../../assets/images/blog/dermal1.jpg";
+import headImage2 from "../../assets/images/blog/blog-img1.jpg";
+import headImage3 from "../../assets/images/blog/hifu.jpeg";
+---
+
+<Layout title="Aesthetic Allure Blog">
+  <SubPageHero
+    heading="Read More About Aesthetic Allure"
+    subheading="In Our Blog"
+    headerCopy={`Welcome to Aesthetic Allure's blog page, where skin health is our top priority! 
+
+    Here you can find the latest posts on innovative skin treatments such as Anti-Wrinkle Injections, Dermal Fillers and more.
+    
+    We strive to provide only the best care for your skin so you can achieve a healthy complexion that will leave you feeling beautiful inside and out. So if you're looking for advice on how to maintain a youthful glow or tips on taking care of your skin from experts in the industry - look no further!`}
+    image={blogBanner}
+  />
+  <main>
+    <Section background="white" gutterBottom>
+      <SectionTitle>Our Blog Posts</SectionTitle>
+      <Content>
+        <p>
+          We will provide you with the skincare knowledge necessary to make
+          educated choices and help you get the results you desire.
+        </p>
+        <p>
+          Get started now by exploring our skin treatment blogs and learn
+          everything there is to know about skin health!
+        </p>
+        <p>
+          At Aesthetic Allure, we want to help you look and feel your best every
+          day.
+
+          <br />Read, learn, and start on the path to skin health today!
+        </p>
+      </Content>
+
+      <div
+        class="mx-auto max-w-7xl mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8 px-4 sm:px-6"
+      >
+        <BlogPostListing
+          url="are-dermal-fillers-better-than-botox"
+          image={headImage}
+          title="Are Dermal Fillers Better Than Botox?"
+          description="Are Dermal Fillers better than Botox? It's a question many people are asking as they consider ways to improve the look and feel of their skin."
+        />
+        <BlogPostListing
+          url="how-long-do-anti-wrinkle-injections-last"
+          image={headImage2}
+          title="How Long Do Anti-Wrinkle Injections Last?"
+          description="Anti-wrinkle injections are a popular, non-surgical aesthetic treatment option for reducing or eliminating dynamic facial lines and wrinkles. But how long do the effects of these treatments last?"
+        />
+        <BlogPostListing
+          url="is-hifu-better-than-fillers"
+          image={headImage2}
+          title="Is HIFU Better Than Fillers?"
+          description="Are you looking for a safe and effective way to lift, tighten and contour your skin without going through surgery?"
+          image={headImage3}
+        />
+      </div>
+    </Section>
+  </main>
+</Layout>

@@ -1,0 +1,17 @@
+---
+interface Props {
+  modifiers?: string;
+}
+
+const { modifiers = "" } = Astro.props;
+---
+
+<div class="relative px-4 sm:px-6 lg:px-8">
+  <div class="mx-auto text-lg">
+    <div
+      class={`mx-auto text-neutral-900 font-light ${modifiers}`}
+    >
+      <slot />
+    </div>
+  </div>
+</div>

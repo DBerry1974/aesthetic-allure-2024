@@ -1,0 +1,48 @@
+---
+import Content from "../components/Content/Content.astro";
+import SubPageHero from "../components/Hero/SubPageHero.astro";
+import Section from "../components/Section/Section.astro";
+import SectionTitle from "../components/Typography/SectionTitle.astro";
+import Layout from "../layouts/Layout.astro";
+import aboutImage from "../assets/images/model-in-towel.jpeg";
+---
+
+<Layout title="About Aesthetic Allure">
+  <SubPageHero
+    heading="Your Treatment Journey"
+    subheading="Starts Here"
+    headerCopy={`We are dedicated to providing you with the best skin treatments available. Whether you are looking for skin rejuvenation, anti-ageing solutions, skin smoothing, or non-surgical rhinoplasty services, we have the expertise and skill to give you the look you desire.`}
+    image={aboutImage}
+  />
+  <main>
+    <Section background="white" gutterBottom>
+      <SectionTitle>About Our Clinic</SectionTitle>
+      <Content>
+        <p>
+          Aesthetic Allure Medical Spa and Skin Clinic specialize in skin
+          treatments that can help you look and feel your best. Our experienced
+          team of professionals is dedicated to providing the highest quality
+          skin care services and products, as well as personalized attention and
+          ongoing education about skin care.
+        </p>
+        <p>
+          Our knowledgeable aestheticians are trained in the latest skincare
+          technology and skin care techniques, and we strive to provide the most
+          effective skincare solutions for each individual's skin type and
+          skincare needs.
+        </p>
+        <p>
+          At our Medical Spa and Skin Clinic, we are committed to helping you
+          achieve your skincare goals. Through our cutting-edge treatments,
+          customized skin care plans, and attentive customer service, we will
+          help you look and feel your best. <br />
+
+          <a
+            class="no-underline text-rose-500 hover:text-rose-300 hover:underline"
+            href="/contact/">Get in touch today</a
+          > to learn more about our skin treatments and schedule your skin consultation.
+        </p>
+      </Content>
+    </Section>
+  </main>
+</Layout>

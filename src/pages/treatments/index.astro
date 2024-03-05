@@ -1,0 +1,75 @@
+---
+import Content from "../../components/Content/Content.astro";
+import SubPageHero from "../../components/Hero/SubPageHero.astro";
+import Section from "../../components/Section/Section.astro";
+import SectionTitle from "../../components/Typography/SectionTitle.astro";
+import Layout from "../../layouts/Layout.astro";
+import treatmentImage from "../../assets/images/model-elegant.jpeg";
+import Typography from "../../components/Typography/Typography.astro";
+import { Image } from 'astro:assets'
+
+const treatments = await Astro.glob("./*.md");
+---
+
+<Layout title="Aesthetic Allure Treatments">
+  <SubPageHero
+    heading="Aesthetic Allure"
+    subheading="Our Treatments"
+    headerCopy={`Our team of skincare experts are dedicated to providing you with the best skin treatments available. Our treatments include Anti-wrinkle Injections, Dermal Fillers, Micro-needling, Microcurrent, Non-surgical Rhinoplasty, Profhilo and more. All of which can help to restore skin  health and vitality.`}
+    image={treatmentImage}
+  />
+  <main>
+    <Section background="white" gutterBottom>
+      <SectionTitle>Our Treatments</SectionTitle>
+      <Content>
+        <p>
+          At Aesthetic Allure Medical Spa and Skin Clinic, we understand that
+          skin care is an individual journey. That's why we offer a variety o
+          treatments tailored to each patient's skin needs. Our anti-wrinkle
+          injections are designed to reduce the appearance of wrinkles, whil our
+          dermal fillers help to restore skin volume and structure. Our
+          micro-needling procedure helps to stimulate skin cell regeneratio a
+          younger look, and our non-surgical rhinoplasty treatment alters the
+          shape of your nose without surgery, while Profhilo is an injectable
+          skin rejuvenation treatment that helps to improve skin laxity. Find
+          out more about our full range of treatments below.
+        </p>
+      </Content>
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 mt-16">
+        <div
+          class="grid min-h-full grid-cols-1 grid-rows-2 lg:grid-cols-2 lg:grid-rows-1 gap-8"
+        >
+          {
+            treatments.map((treatment) => (
+              <div class="relative flex">
+                <Image
+                  src={treatment.frontmatter.featuredImage}
+                  alt={treatment.frontmatter.title}
+                  width={600}
+                  height={400}
+                  class="absolute inset-0 h-full w-full object-cover object-center"
+                />
+                <div class="relative flex w-full flex-col items-start justify-between bg-black bg-opacity-60 p-12 sm:p-16">
+                  <h2 class="text-2xl font-bold font-serif text-white mb-4">
+                    {treatment.frontmatter.title}
+                  </h2>
+                  <Typography>
+                    <p class="text-white">
+                      {treatment.frontmatter.description}
+                    </p>
+                  </Typography>
+                  <a
+                    href={treatment.url}
+                    class="mt-4 rounded-md bg-white py-2.5 px-4 text-sm font-medium text-gray-900 hover:bg-gray-50"
+                  >
+                    Read more
+                  </a>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </Section>
+  </main>
+</Layout>

@@ -1,0 +1,574 @@
+---
+
+export const prerender = true
+import Content from "../../../components/Content/LandingContent.astro";
+import LandingSubPageHero from "../../../components/Hero/LandingSubPageHero.astro";
+import ImageContentBlock from "../../../components/ImageContentBlock.astro";
+import Section from "../../../components/Section/Section.astro";
+import LandingSectionTitle from "../../../components/Typography/LandingSectionTitle.astro";
+import Layout from "../../../layouts/LandingLayout.astro";
+import blogBanner from "../../../assets/images/dermal1.webp";
+import BlogPostListing from "../../../components/Blog/BlogPostListing.astro";
+import headImage from "../../../assets/images/blog/dermal1.jpg";
+import dermalImage2 from "../../../assets/images/dermal2.jpg";
+import dermalImage3 from "../../../assets/images/dermal3.jpg";
+import reverse from "../../../assets/images/reverse.jpg";
+import versatile from "../../../assets/images/versatile.jpg";
+import cost from "../../../assets/images/cost.jpg";
+
+import awiImage3 from "../../../assets/images/awi3.jpg";
+import awiImage4 from "../../../assets/images/awi4.jpg";
+import awiImage5 from "../../../assets/images/awi8.jpg";
+import awiImage6 from "../../../assets/images/awi9.jpg";
+import awiImage7 from "../../../assets/images/face1.jpg";
+import ctaImage1 from "../../../assets/images/homepage-face.jpeg";
+import HeroDecorator from "../../../components/Decoraters/";
+
+import quick from "../../../assets/images/stopwatch.jpg";
+
+import { Image } from 'astro:assets'
+
+import { getSpecificTowns } from "../../../lib/getTowns";
+
+export async function getStaticPaths() {
+  const towns = await getSpecificTowns();
+
+  const paths = [];
+  for (let i = 0; i < towns.length; i++) {
+    const town = towns[i];
+    let path = town
+      .toLowerCase()
+      .replace(/ /g, "-")
+      .replace(/\`/, "")
+      .replace(/\./, "")
+      .replace(/\'/, "");
+    paths.push({ params: { slug: path }, props: { town } });
+  }
+
+  return paths;
+}
+
+const { town } = Astro.props;
+---
+
+<Layout title="Dermal fillers - Aesthetic Allure Medical Spa and Skin Clinic"
+description="Dermal fillers from Aesthetic Allure Medical Spa and Skin Clinic. Our comprehensive services help you achieve your optimal skin health and beauty goals.">
+  <LandingSubPageHero
+    heading="Dermal fillers"
+  
+    headerCopy={`Dermal fillers are a popular solution for those looking to restore volume, definition and hydration to their facial features.  
+
+They are a popular solution for those looking to restore volume, definition and hydration to their facial features.
+
+Dermal fillers are made from hyaluronic acid, which is found naturally in the body, and when injected into target areas, they draw in water and moisture to plump up the skin. Dermal filler products can help to reduce wrinkles, lift flatter areas and refresh your overall look.`}
+    image={blogBanner}
+  />
+ <main>
+
+ 
+
+
+  <!--Start of section--><div class="max-w-7xl my-10 mx-auto px-4 lg:px-0">
+    <LandingSectionTitle classes="pb-4 mt-6 text-left">Dermal fillers {town} 
+    </LandingSectionTitle>
+    <LandingSectionTitle classes="pb-4 mt-6 text-left">What Are Dermal Fillers?
+    </LandingSectionTitle>
+    
+    
+    <div
+         class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+       >
+       <div class="group relative flex flex-col">
+
+    <p class="mb-2">
+        Dermal fillers are a popular solution for those looking to restore volume, definition and hydration to their facial features. These substances are injected into the skin to add structure and lift, as well as hydrate the skin for a smoother appearance. 
+    </p>
+    <p class="mb-2">
+        Dermal fillers can be used to address wrinkles, fine lines, uneven skin tone, deep creases, hollowed temples, sunken cheeks and other areas of the face that may have lost volume due to ageing. 
+    </p>
+    <p class="mb-2">
+     Filler injections are a safe, non-invasive way to restore your youthful appearance with natural-looking results. 
+    </p>
+    <p class="mb-2">
+        At Aesthetic Allure Medical Spa and Skin Clinic, our team of experienced aesthetic professionals are experts in delivering the best dermal filler treatments available. 
+    </p>
+    <p class="mb-2">
+        We use a range of high-quality fillers to customize each treatment, ensuring our clients get the results they desire. </p>
+        <p class="mb-2">
+           Our comprehensive services also include anti-ageing skincare treatments, laser procedures and more to help you achieve your optimal skin health and beauty goals.</p>
+        
+    </div>
+    <div class="group relative flex flex-col overflow-hidden">
+      
+      <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+        <Image
+        class="h-full w-full object-cover rounded-lg shadow-lg mb-2"
+        src={dermalImage2}
+        alt="dermal fillers"
+        width={800}
+        height={600}
+        format={"webp"}
+      />
+      
+      <h4 class="text-xs mt-2 text-right hidden md:block">Injectable treatments such as injectable fillers are a popular alternative to cosmetic surgery
+    </h4>
+    </div>
+    <h4 class="text-xs mt-2 text-right md:hidden">Injectable treatments such as injectable fillers are a popular alternative to cosmetic surgery
+    </h4>
+  </div>
+  </div>
+</div><!-- End of Section -->
+
+  <div class="max-w-7xl mx-auto lg:rounded-lg mb-10 overflow-hidden">
+    <ImageContentBlock
+    title="Book Your Consultation Today"
+    copy="Get in touch to find out more and speak to one of our experts."
+    image={ctaImage1}
+    href="https://www.allurespa.co.uk/treatments/dermal-filters"
+    linkText="BOOK NOW"
+  />
+  </div>
+
+  
+
+
+     <!--START OF SECTION --> <div
+    class="mx-auto max-w-2xl  px-4 lg:max-w-7xl "
+  >
+    <LandingSectionTitle classes="pb-12 lg:py-12 md:text-center">The Benefits of Dermal Fillers  
+    </LandingSectionTitle>
+    <p class="mb-10">With so many benefits, it's no wonder dermal fillers are becoming increasingly popular among patients looking to achieve a more youthful appearance. If you're considering this type of treatment, be sure to speak with our expert team to learn more about how it can help you reach your aesthetic goals. </p>
+    <div
+      class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+    >
+
+    <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+      <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+        <Image
+          width={1000}
+          height={600}
+          src={awiImage3}
+          alt="dermal fillers"
+          format="webp"
+          class="h-full w-full object-cover object-center sm:h-full sm:w-full"
+        />
+      </div>
+      <div class="flex flex-1 flex-col space-y-2 py-4">
+        <h3 class="text-lg font-bold text-gray-900">
+            Long-Lasting Results</h3>
+        <p class="text-gray-500">
+            
+            Dermal fillers are a great choice for people who want to achieve results that last. In most cases, the effects of this non-surgical treatment can last between six and nine months—or even longer in some cases—before the body slowly begins to absorb the product. This enables patients to enjoy their results for a long period of time.
+            
+             
+        </p>
+      </div>
+    </div>
+
+    <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+      <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+        <Image
+          width={1000}
+          height={600}
+          src={dermalImage3}
+          alt="dermal fillers"
+          format="webp"
+          class="h-full w-full object-cover object-center sm:h-full sm:w-full"
+        />
+      </div>
+      <div class="flex flex-1 flex-col space-y-2 py-4">
+        <h3 class="text-lg font-bold text-gray-900">
+            Subtle Enhancements
+        </h3>
+        <p class="text-gray-500">
+            
+            Dermal fillers are designed to provide subtle enhancements that involve little or no downtime after treatment and are virtually pain-free in most cases. This makes them ideal for people who don't want to go through the hassle of surgery, but still want to look their best.
+            
+            </p>
+      </div>
+    </div>
+  </div>
+</div><!--END OF SECTION -->
+
+
+ <!--START OF SECTION --> <div
+ class="mx-auto max-w-2xl px-4 lg:max-w-7xl "
+ >
+   <div
+     class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+   >
+
+   <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+     <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+       <Image
+         width={1000}
+         height={600}
+         src={reverse}
+         alt="dermal fillers"
+         format="webp"
+         class="h-full w-full object-cover object-center sm:h-full sm:w-full"
+       />
+     </div>
+     <div class="flex flex-1 flex-col space-y-2 py-4">
+       <h3 class="text-lg font-bold text-gray-900">
+        Reversibility
+      </h3>
+       <p class="text-gray-500">
+      
+Another great benefit of dermal fillers is that their effects are reversible if you don't like the results or want to try something else. This makes them a good option for people who are looking for an anti-ageing treatment but want to be able to adjust it easily if needed.
+    </p>
+     </div>
+   </div>
+
+   <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+     <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+       <Image
+         width={1000}
+         height={600}
+         src={versatile}
+         alt="dermal fillers"
+         format="webp"
+         class="h-full w-full object-cover object-center sm:h-full sm:w-full"
+       />
+     </div>
+     <div class="flex flex-1 flex-col space-y-2 py-4">
+       <h3 class="text-lg font-bold text-gray-900">
+        Versatility
+      </h3>
+       <p class="text-gray-500">
+       
+Dermal fillers can be used on virtually any part of the face, such as the forehead, temples, cheeks, lips, and jawline. This makes them incredibly versatile and allows patients to target specific areas that they want to enhance. Additionally, dermal fillers can be used in combination with other treatments, such as Botox or laser skin rejuvenation, to produce even more dramatic results. 
+      </p>
+     </div>
+   </div>
+ </div>
+</div><!--END OF SECTION -->
+
+<!--START OF SECTION --> <div
+class="mx-auto max-w-2xl px-4 lg:max-w-7xl "
+>
+  <div
+    class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+  >
+
+  <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+    <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+      <Image
+        width={1000}
+        height={600}
+        src={quick}
+        alt="dermal fillers"
+        format="webp"
+        class="h-full w-full object-cover object-center sm:h-full sm:w-full"
+      />
+    </div>
+    <div class="flex flex-1 flex-col space-y-2 py-4">
+      <h3 class="text-lg font-bold text-gray-900">
+        Quick Results
+     </h3>
+      <p class="text-gray-500">
+Another great advantage of dermal fillers is that they usually provide quick results. Most patients will see an immediate improvement in their appearance after treatment, and this effect can last for several months. This makes it a great option for people who don't have the time or patience to wait for results.  
+   </p>
+    </div>
+  </div>
+
+  <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+    <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+      <Image
+        width={1000}
+        height={600}
+        src={cost}
+        alt="dermal fillers"
+        format="webp"
+        class="h-full w-full object-cover object-center sm:h-full sm:w-full"
+      />
+    </div>
+    <div class="flex flex-1 flex-col space-y-2 py-4">
+      <h3 class="text-lg font-bold text-gray-900">
+        Cost-Effective
+     </h3>
+      <p class="text-gray-500">
+       
+        Finally, dermal fillers are relatively cost-effective compared to other anti-ageing treatments and can even be combined with other treatments to reduce overall costs. This makes it possible for patients to get the results they want without breaking the bank. 
+     </p>
+    </div>
+  </div>
+</div>
+</div><!--END OF SECTION -->
+
+
+
+
+<!--START OF SECTION --> <div
+class="mx-auto max-w-2xl  px-4 lg:max-w-7xl "
+>
+  <LandingSectionTitle classes="pb-12 lg:py-12 md:text-center">Treatment areas for Dermal Fillers 
+  </LandingSectionTitle>
+
+  <div
+    class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+  >
+
+  <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+   
+    <div class="flex flex-1 flex-col space-y-2 py-4">
+      <h3 class="text-lg font-bold text-gray-900">
+        Cheek</h3>
+      <p class="text-gray-500">
+          
+       
+        Dermal fillers can be used to create a beautiful and contoured cheek, giving the face a more feminine look while also restoring lost cheekbone volume as we age. Dermal filler procedures provide subtle yet effective results by enhancing the cheekbone area, resulting in improved features such as nose-to-mouth lines for a smoother and more youthful look. 
+          
+           
+      </p>
+    </div>
+  </div>
+
+  <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+    
+    <div class="flex flex-1 flex-col space-y-2 py-4">
+      <h3 class="text-lg font-bold text-gray-900">
+        Chin
+      </h3>
+      <p class="text-gray-500">
+          
+   
+        Dermal fillers are an effective treatment used to provide a more defined profile, particularly for those with relatively small or flat chins. Dermal Fillers can help create a more feminine, v-shaped facial contour for women and a stronger, more prominent and masculine shape for men. Dermal Filler treatments involve the injection of fillers into the chin area. This helps to provide the desired contouring effect. 
+          
+          </p>
+    </div>
+  </div>
+</div>
+</div><!--END OF SECTION -->
+
+<!--START OF SECTION --> <div
+class="mx-auto max-w-2xl  px-4 lg:max-w-7xl "
+>
+  <div
+    class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+  >
+
+  <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+   
+    <div class="flex flex-1 flex-col space-y-2 py-4">
+      <h3 class="text-lg font-bold text-gray-900">
+        Jawline</h3>
+      <p class="text-gray-500">
+        
+        The jawline treatment is popular among both men and women, as it helps to subtly contour the face and create a more chiselled profile that gives a more sculpted look. The filler is injected into the area around the jawline angle with a safe cannula to increase the volume and enhance the definition of the jawbone. The results can last for up to 9-12 months before additional Dermal Filler injections are needed to refresh your look.
+      </p>
+    </div>
+  </div>
+
+  <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+    
+    <div class="flex flex-1 flex-col space-y-2 py-4">
+      <h3 class="text-lg font-bold text-gray-900">
+        Lips
+      </h3>
+      <p class="text-gray-500">
+     
+        Lip fillers are a popular choice for those seeking a fuller, more youthful-looking pout. Dermal fillers can be used to create subtle enhancements to naturally thin lips or to restore volume and shape that have been lost due to the natural ageing process.</p>
+    </div>
+  </div>
+</div>
+</div><!--END OF SECTION -->
+
+<!--START OF SECTION --> <div
+class="mx-auto max-w-2xl  px-4 lg:max-w-7xl "
+>
+  <div
+    class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+  >
+
+  <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+  
+    <div class="flex flex-1 flex-col space-y-2 py-4">
+      <h3 class="text-lg font-bold text-gray-900">
+        Nasolabial folds (nose to mouth lines)
+    </h3>
+      <p class="text-gray-500">
+        Nasolabial folds, sometimes known as nose-to-mouth lines, are creases or wrinkles that form between the nose and corners of the mouth.
+      </p>
+      <p class="text-gray-500">
+        It is a common part of the ageing process, occurring as collagen breaks down in the face with a loss of elasticity. Dermal fillers are one type of cosmetic procedure used to reduce the appearance of these lines and wrinkles, by replenishing the volume of the skin in this area.
+      </p>
+      <p class="text-gray-500">
+        The fillers help to “plump” up the skin so that fine lines and deep wrinkles appear smoother. Dermal fillers are a safe, non-invasive way to combat nasolabial folds and restore a more youthful look to your face.
+    </p>
+    </div>
+  </div>
+
+  <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white  mb-20">
+    <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+  
+    <div class="flex flex-1 flex-col space-y-2 py-4">
+      <h3 class="text-lg font-bold text-gray-900">
+        Lips
+      </h3>
+      <p class="text-gray-500">
+        Marionettes (sad / down-turned mouth) 
+        Dermal fillers made with can be a great way to treat marionette lines, also known as sad or down-turned mouth. These lines are often caused by the loss of volume due to ageing or sun damage and the pull of the depressor muscle attached to the edge of the lips.
+        </p>
+        <p class="text-gray-500">
+            Dermal fillers can be injected below the corners of the mouth to lift your smile and fill out minor creases. We often combine this treatment with a small anti-wrinkle injection to help stop the pull of the depressor muscle as well. There is no downtime for this treatment and results are usually immediate, lasting up to 12 months or longer.
+        </p>
+    </div>
+  </div>
+</div>
+</div>
+</div><!--END OF SECTION -->
+
+
+<div class="max-w-7xl mx-auto lg:rounded-lg mb-20 overflow-hidden">
+  <ImageContentBlock
+  title="Book Your Consultation Today"
+  copy="Get in touch to find out more and speak to one of our experts."
+  image={ctaImage1}
+  href="https://www.allurespa.co.uk/treatments/dermal-filters"
+  linkText="BOOK NOW"
+/>
+</div>
+
+ 
+
+
+
+
+<!-- START OF FAQ SECTION -->
+
+<div class="bg-gray-50 mb-20">
+  <div class="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8">
+
+
+    <LandingSectionTitle classes="pb-4 text-left">Dermal Filler Treatment FAQ 
+    </LandingSectionTitle>    
+    
+ 
+    <div>
+      <dl class="space-y-16 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-16 sm:space-y-0 lg:grid-cols-3 lg:gap-x-10">
+      
+
+        
+
+        <!-- More questions... -->
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">What are Dermal Fillers and How Do They Work? 
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">Dermal fillers are injectable substances used to temporarily restore facial volume, reduce wrinkles, and give the face a smoother and more youthful appearance. The most common type of dermal filler is hyaluronic acid (HA) which works by binding with water molecules in the skin to add fullness.
+          </dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">How do anti-wrinkle injections work?
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">Anti-wrinkle injections work by relaxing the muscles that cause wrinkles when making facial expressions, preventing them from contracting and creating lines in the skin. 
+          </dd>
+        </div>
+
+        
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">How Long Do Dermal Fillers Last? 
+        </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">Generally speaking, most dermal fillers last between 6 and 12 months depending on the type of product used and area being treated. HA fillers tend to last between 9-12 months while other types may only last 6-8 months. 
+          </dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">Are Dermal Filler Treatments Safe? 
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">Yes, when administered properly by an experienced medical professional, dermal filler treatments can be considered safe. Talk to your doctor before getting any treatment to make sure it is right for you.  
+          </dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">What Should I Expect After Treatment? 
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">Following treatment with dermal fillers you may experience some redness or swelling at injection sites but this should subside within a day or two after receiving treatment. Results from dermal filler treatments should be visible immediately after treatment, however they may take a few days to reach their peak. It is important to follow your doctor’s instructions for optimal results. 
+          </dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">How Can I Make My Dermal Fillers Last Longer? 
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">To make sure that you get the most out of your dermal filler treatment, it is important to take proper care and maintenance of your skin. Avoiding excessive sun exposure and using sunscreen can help preserve your results. Additionally, you may want to consider scheduling touch-up treatments throughout the year to keep your face looking its best. 
+          </dd>
+        </div>
+
+        
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">Do Dermal Fillers Hurt? 
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">Most people report minimal discomfort during dermal filler treatments. Your doctor may apply a topical numbing cream before treatment to reduce any potential pain or discomfort associated with injections. However, everyone’s experience is unique so talk to your doctor about what to expect beforehand. 
+          </dd>
+        </div>
+
+       
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">Can Dermal Fillers Be Removed?
+
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">Yes, in certain cases dermal fillers can be removed with the help of an experienced doctor. HA based fillers can be dissolved over time using a solution called hyaluronidase, while other HA acid-based fillers may require additional removal methods. Talk to your doctor about what options are available to you. 
+          </dd>
+        </div>
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">Are Dermal Fillers Reversible? 
+
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">Yes, some dermal fillers are reversible and can be modified or removed if desired. HA based fillers can typically be reversed with the use of a solution called hyaluronidase. Other types of non-hyaluronic acid-based fillers may require different removal methods. Your doctor can provide more information about the type of dermal filler and which steps are needed to reverse or modify it. 
+          </dd>
+        </div>
+
+        <div>
+            <dt class="text-base font-semibold leading-7 text-gray-900">What Should I Avoid After Dermal Filler Treatment?
+  
+            </dt>
+            <dd class="mt-2 text-base leading-7 text-gray-600">Following dermal filler treatment, you should avoid strenuous exercise, sun exposure, and excessive touching of the treated area for at least 24 hours. It is also important to avoid alcohol, as it can increase swelling and bruising. Your doctor will provide more detailed instructions on what to avoid before, during, and after treatment. 
+            </dd>
+          </div>
+          <div>
+            <dt class="text-base font-semibold leading-7 text-gray-900">What Are Some Common Side Effects of Dermal Fillers? 
+            </dt>
+            <dd class="mt-2 text-base leading-7 text-gray-600">Common side effects of dermal fillers include swelling, redness, bruising, and itching at the injection site. These should subside within a few days after treatment. Talk to your doctor if you experience any other side effects or concerns following treatment. 
+            </dd>
+          </div>
+          <div>
+            <dt class="text-base font-semibold leading-7 text-gray-900">Is There Any Downtime After Dermal Filler Treatment? 
+            </dt>
+            <dd class="mt-2 text-base leading-7 text-gray-600">Generally, there is no downtime associated with dermal filler treatments. However, you should avoid strenuous activities and sun exposure for the first 24 hours after treatment to reduce any potential swelling or bruising. Your doctor will provide more detailed instructions on how to care for your skin after treatment. 
+            </dd>
+          </div>
+  
+        
+
+      </dl>
+      
+  
+    </div>
+  </div>
+</div>
+<!-- END OF FAQ SECTION -->
+<HeroDecorator
+title={`From ${town} and looking for a luxury spa?`}
+sub={`Our new luxury spa opened in the City of London(Next to cannon street station) has the latest treatments at affordable prices.`}
+town={town}
+client:load
+/>
+
+
+<div class="max-w-7xl mx-auto lg:rounded-lg mb-10 overflow-hidden">
+  <ImageContentBlock
+  title="Book Your Consultation Today"
+  copy="Get in touch to find out more and speak to one of our experts."
+  image={ctaImage1}
+  href="https://www.allurespa.co.uk/treatments/dermal-filters"
+  linkText="BOOK NOW"
+/>
+</div>
+
+    
+  </main>
+</Layout>

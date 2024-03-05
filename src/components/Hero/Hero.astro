@@ -1,0 +1,45 @@
+---
+import { Image } from 'astro:assets'
+import home from "../../assets/images/model-transparent.png";
+---
+
+<section
+  class="min-h-[calc(100vh-128px)] grid grid-cols-12 mb-80 sm:mb-0 sm:overflow-hidden relative bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-neutral-700 via-neutral-900 to-black"
+>
+  <div
+    class="absolute -bottom-1/2 sm:inset-0 sm:col-start-2 sm:col-span-6 lg:col-start-2 lg:col-span-4 h-full flex flex-col justify-center"
+  >
+    <div class="bg-black opacity-95 z-10 p-12 space-y-6 shadow-2xl">
+      <h2
+        class="font-serif font-black text-5xl text-orange-300"
+        id="join-heading"
+      >
+        <span
+          class="block xl:inline text-transparent bg-clip-text bg-gradient-to-br from-rose-200 to-rose-600 py-2"
+        >
+          Medical Spa and Skin Clinic</span
+        >
+      </h2>
+      <p class="text-lg text-white font-light">
+        Welcome to Aesthetic Allure Medical Spa and Skin Clinic, where skin
+        health is our number one priority. <br />We specialize in providing the
+        highest quality skin treatments that are tailored to each individual's
+        unique needs and goals.
+      </p>
+      <a
+        href="/contact"
+        class="inline-flex items-center border border-rose-500 bg-transparent px-6 py-3 text-base font-medium text-rose-500 shadow-sm hover:bg-rose-500 hover:text-neutral-800 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2"
+        >Talk to us</a
+      >
+    </div>
+  </div>
+  <div class="col-start-7 col-span-6 sm:col-start-4 sm:col-span-9 relative">
+    <Image
+      class="absolute bottom-0 left-1/2 -translate-x-1/2 object-cover h-full w-auto"
+      format="webp"
+      src={home}
+      aspectRatio="1/1"
+      alt="close up of a face of a model"
+    />
+  </div>
+</section>

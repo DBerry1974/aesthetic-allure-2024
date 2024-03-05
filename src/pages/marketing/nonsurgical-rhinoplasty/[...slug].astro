@@ -1,0 +1,525 @@
+---
+export const prerender = true
+import Content from "../../../components/Content/LandingContent.astro";
+import LandingSubPageHero from "../../../components/Hero/LandingSubPageHero.astro";
+import ImageContentBlock from "../../../components/ImageContentBlock.astro";
+import Section from "../../../components/Section/Section.astro";
+import LandingSectionTitle from "../../../components/Typography/LandingSectionTitle.astro";
+import Layout from "../../../layouts/LandingLayout.astro";
+import blogBanner from "../../../assets/images/rhyno1.webp";
+import BlogPostListing from "../../../components/Blog/BlogPostListing.astro";
+import headImage from "../../../assets/images/blog/dermal1.jpg";
+import headImage2 from "../../../assets/images/blog/blog-img1.jpg";
+import headImage3 from "../../../assets/images/blog/hifu.jpeg";
+import awiImage1 from "../../../assets/images/awi2.jpg";
+import awiImage2 from "../../../assets/images/awi1.jpg";
+import awiImage3 from "../../../assets/images/awi3.jpg";
+import awiImage4 from "../../../assets/images/awi4.jpg";
+import awiImage5 from "../../../assets/images/awi8.jpg";
+import awiImage6 from "../../../assets/images/awi9.jpg";
+import awiImage7 from "../../../assets/images/face1.jpg";
+import rhynoImage2 from "../../../assets/images/rhyno2.jpg";
+import rhynoImage3 from "../../../assets/images/rhyno3.jpg";
+import rhynoImage4 from "../../../assets/images/rhyno4.jpg";
+import downtime from "../../../assets/images/nodowntime1.jpg";
+import nosejob from "../../../assets/images/nosejob1.jpg";
+import cost from "../../../assets/images/cost.jpg";
+import natural from "../../../assets/images/natural1.jpg";
+
+import ctaImage1 from "../../../assets/images/homepage-face.jpeg";
+
+import quick from "../../../assets/images/stopwatch.jpg";
+
+import { Image } from 'astro:assets'
+
+import HeroDecorator from "../../../components/Decoraters/";
+import { getSpecificTowns } from "../../../lib/getTowns";
+
+export async function getStaticPaths() {
+  const towns = await getSpecificTowns();
+
+  const paths = [];
+  for (let i = 0; i < towns.length; i++) {
+    const town = towns[i];
+    let path = town
+      .toLowerCase()
+      .replace(/ /g, "-")
+      .replace(/\`/, "")
+      .replace(/\./, "")
+      .replace(/\'/, "");
+    paths.push({ params: { slug: path }, props: { town } });
+  }
+
+  return paths;
+}
+
+const { town } = Astro.props;
+---
+
+<Layout title="Non-Surgical Rhinoplasty. Aesthetic Allure Medical Spa & Skin Clinic" description="Non-Surgical Rhinoplasty from Aesthetic Allure Medical Spa and Skin Clinic. Comprehensive services help you achieve your skin health & beauty goals.">
+  
+  <LandingSubPageHero
+    heading="Non-Surgical Rhinoplasty"
+  
+    headerCopy={`Non-Surgical Rhinoplasty, also known as a "liquid nose job," or "non-surgical nose job", is a minimally invasive procedure that uses injectable fillers to enhance the shape of the nose. Unlike traditional rhinoplasty, which involves surgical incisions and permanent changes to the nasal structure, Non-Surgical Rhinoplasty is a quick and safe alternative that provides immediate results.`}
+    image={blogBanner}
+  />
+ <main>
+
+ 
+ <!--Start of section--><div class="max-w-7xl my-10 mx-auto px-4 lg:px-0">
+    <LandingSectionTitle classes="pb-4 mt-6 text-left">Non-Surgical Rhinoplasty {town}
+    </LandingSectionTitle>
+   
+    
+    <div
+         class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+       >
+       <div class="group relative flex flex-col">
+        <LandingSectionTitle classes="pb-4 mt-6 text-left">
+            What is Non-Surgical Rhinoplasty?
+    
+        </LandingSectionTitle>
+
+    <p class="mb-2">
+        The non-surgical nose job procedure is relatively simple and typically takes only 15 to 20 minutes. It involves the injection of dermal fillers into targeted areas of the nose to improve its shape. There is no downtime or recovery required after this procedure, and results can be seen immediately. 
+    </p>
+    <p class="mb-2">
+        The effects of the treatment last for around six months before requiring additional treatments in order to maintain the desired look. 
+    </p>
+    <p class="mb-2">
+        A non-surgical nose job can be used to address various aesthetic issues with the nose, including bumps on the bridge, asymmetry, drooping tips, and more minor corrections such as making small adjustments in width or length. 
+    </p>
+    <p class="mb-2">
+        This treatment is a great option for those who are looking to improve the look of their nose without undergoing surgery. It offers quick, immediate results with minimal downtime and helps patients achieve the perfect balance of facial features.
+
+    </p>
+    
+    </div>
+    <div class="group relative flex flex-col overflow-hidden">
+      
+      <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+        <Image
+        class="h-full w-full object-cover rounded-lg  shadow-lg mb-2"
+        src={rhynoImage2}
+        alt="Image of oil being poured onto hand"
+        width={800}
+        height={600}
+        format={"webp"}
+      />
+      <h4 class="text-xs mt-2 text-right hidden md:block">Nose reshaping with nose fillers
+
+    </h4>
+    </div>
+    <h4 class="text-xs mt-2 text-right md:hidden">Nose reshaping with nose fillers
+    </h4>
+  </div>
+  </div>
+</div><!-- End of Section -->
+
+
+  <div class="max-w-7xl mx-auto lg:rounded-lg mb-10 overflow-hidden">
+    <ImageContentBlock
+    title="Book Your Consultation Today"
+    copy="Get in touch to find out more and speak to one of our experts."
+    image={ctaImage1}
+    href="https://www.allurespa.co.uk/treatments/non-surgical-rhinoplasty"
+    linkText="BOOK NOW"
+  />
+  </div>
+
+  
+
+
+     <!--START OF SECTION --> <div
+    class="mx-auto max-w-2xl  px-4 lg:max-w-7xl "
+  >
+    <LandingSectionTitle classes="pb-12 lg:py-12 md:text-center">The Benefits of a "Non-Surgical Nose Job"
+    </LandingSectionTitle>
+    <p class="mb-10">
+        This is a popular cosmetic treatment that offers numerous benefits for those looking to enhance the appearance of their nose without undergoing surgery. In addition to being a minimally invasive alternative to traditional rhinoplasty, the treatment offers several other benefits, including:
+    </p>
+    <div
+      class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+    >
+
+    <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+      <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+        <Image
+          width={1000}
+          height={600}
+          src={quick}
+          alt="Anti-wrinkle Injections"
+          format="webp"
+          class="h-full w-full object-cover object-center sm:h-full sm:w-full"
+        />
+      </div>
+      <div class="flex flex-1 flex-col space-y-2 py-4">
+        <h3 class="text-lg font-bold text-gray-900">
+            Fast Results        </h3>
+        <p>
+           
+            Unlike traditional rhinoplasty, which can take months to see results, this offers instant results. Patients can leave the clinic with a more symmetrical and proportionate nose, improving their overall facial balance and confidence.  
+        </p>
+      </div>
+    </div>
+
+    <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+      <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+        <Image
+          width={1000}
+          height={600}
+          src={downtime}
+          alt="Anti-wrinkle Injections"
+          format="webp"
+          class="h-full w-full object-cover object-center sm:h-full sm:w-full"
+        />
+      </div>
+      <div class="flex flex-1 flex-col space-y-2 py-4">
+        <h3 class="text-lg font-bold text-gray-900">
+            No Downtime
+        </h3>
+        <p>
+            Traditional rhinoplasty requires significant downtime to allow the nose to heal and the swelling to subside. However, this is a quick and minimally invasive procedure that does not require any downtime, allowing patients to resume their normal activities right after the procedure.        </p>
+      </div>
+    </div>
+  </div>
+</div><!--END OF SECTION -->
+
+
+ <!--START OF SECTION --> <div
+ class="mx-auto max-w-2xl px-4 lg:max-w-7xl "
+ >
+   <div
+     class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+   >
+
+   <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+     <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+       <Image
+         width={1000}
+         height={600}
+         src={nosejob}
+         alt="backshoulderneckmassage"
+         format="webp"
+         class="h-full w-full object-cover object-center sm:h-full sm:w-full"
+       />
+     </div>
+     <div class="flex flex-1 flex-col space-y-2 py-4">
+       <h3 class="text-lg font-bold text-gray-900">
+        Non-Permanent
+      </h3>
+       <p>
+        Non-surgical nose reshaping is a non-permanent solution, which means that patients can experiment with different looks and techniques without worrying about long-term commitment. If they are unhappy with the results, they can easily reverse the procedure.    </p>
+     </div>
+   </div>
+
+   <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+     <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+       <Image
+         width={1000}
+         height={600}
+         src={awiImage3}
+         alt="backshoulderneckmassage"
+         format="webp"
+         class="h-full w-full object-cover object-center sm:h-full sm:w-full"
+       />
+     </div>
+     <div class="flex flex-1 flex-col space-y-2 py-4">
+       <h3 class="text-lg font-bold text-gray-900">
+        No Scarring
+      </h3>
+       <p>
+        Traditional rhinoplasty involves incisions and sutures, which can leave scars on the nose. Non-Surgical nose jobs, on the other hand, is a needle-based procedure that does not involve any incisions, making it a scar-free solution.      </p>
+     </div>
+   </div>
+ </div>
+</div><!--END OF SECTION -->
+
+<!--START OF SECTION --> <div
+class="mx-auto max-w-2xl px-4 lg:max-w-7xl "
+>
+  <div
+    class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+  >
+
+  <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+    <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+      <Image
+        width={1000}
+        height={600}
+        src={cost}
+        alt="backshoulderneckmassage"
+        format="webp"
+        class="h-full w-full object-cover object-center sm:h-full sm:w-full"
+      />
+    </div>
+    <div class="flex flex-1 flex-col space-y-2 py-4">
+      <h3 class="text-lg font-bold text-gray-900">
+        Cost-Effective
+     </h3>
+      <p>
+        Non Surgical Nose Treatment is a cost-effective alternative to traditional rhinoplasty, which can be expensive. Non-Surgical treatments typically costs less than half the price of traditional rhinoplasty, making it a more affordable option for those looking to enhance the appearance of their nose. </p>
+    </div>
+  </div>
+
+  <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+    <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+      <Image
+        width={1000}
+        height={600}
+        src={natural}
+        alt="backshoulderneckmassage"
+        format="webp"
+        class="h-full w-full object-cover object-center sm:h-full sm:w-full"
+      />
+    </div>
+    <div class="flex flex-1 flex-col space-y-2 py-4">
+      <h3 class="text-lg font-bold text-gray-900">
+        Natural Results
+     </h3>
+      <p>
+        Non-surgical rhinoplasty offers natural-looking results, as the dermal fillers are injected into targeted areas to improve the shape of the nose. This means that patients can achieve a more balanced and proportionate look without having to worry about their nose looking fake or artificial. 
+        
+        </p>
+    </div>
+  </div>
+</div>
+<p>
+    With its many benefits, Non-Surgical Rhinoplasty treatment is an excellent choice for anyone looking to enhance their nose's appearance without undergoing surgery. 
+</p>
+<p class="mb-10">
+    Whether you want to smooth out bumps or humps, add volume, or improve your nose's symmetry, it can provide excellent results with minimal risks and downtime.
+</p>
+
+</div><!--END OF SECTION -->
+
+
+ <!--Start of section--><div class="max-w-7xl mt-0 pb-0 mb-10 mx-auto px-4 lg:px-0">
+    
+  <LandingSectionTitle classes="pb-4 text-left">How Non-Surgical Nose Filler Treatment Works
+  </LandingSectionTitle>
+  <div
+       class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+     >
+     <div class="group relative flex flex-col">
+
+  <p class="mb-2">
+    Non-Surgical Rhinoplasty works by using injectable fillers to reshape and contour the nose. These fillers are made from hyaluronic acid, which is a substance that occurs naturally in the body and is well-tolerated by most people.
+</p>
+  <p class="mb-2">
+    During the procedure, our fully qualified staff will inject the filler into specific areas of your nose to smooth out bumps, correct asymmetry, or add volume. 
+</p>
+  <p class="mb-2">
+    The filler can also be used to lift the tip of the nose, making it appear more youthful and defined.
+</p>
+  <p class="mb-2">
+    One of the benefits of Non-Surgical Rhinoplasty is that it offers immediate results with minimal downtime. Unlike traditional rhinoplasty, which requires incisions and a longer recovery period, Non-Surgical Rhinoplasty typically takes less than an hour to complete.
+</p>
+  <p class="mb-2">
+    In addition, the results of Non-Surgical Rhinoplasty are not permanent, which can be a pro or con depending on your preferences. 
+</p>
+  <p class="mb-2">
+    While traditional rhinoplasty offers permanent results, Non-Surgical Rhinoplasty allows you to experiment with different looks and make changes as your preferences evolve over time.
+</p>
+
+
+  
+  </div>
+  <div class="group relative flex flex-col overflow-hidden">
+    
+    <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+      <Image
+      class="h-full w-full object-cover rounded-lg  shadow-lg mb-10"
+      src={rhynoImage3}
+      alt="Image of oil being poured onto hand"
+      width={800}
+      height={600}
+      format={"webp"}
+    />
+    
+    <h4 class="text-xs mt-2 text-right hidden md:block">Crooked nose & drooping nasal tip can be treated  with Dermal Filler 
+    </h4>
+    </div>
+    <h4 class="text-xs mt-2 text-right md:hidden">Crooked nose & drooping nasal tip can be treated  with Dermal Filler 
+    </h4>
+  </div>
+  </div>
+</div><!-- End of Section -->
+
+
+<div class="max-w-7xl mx-auto lg:rounded-lg mb-20 overflow-hidden">
+  <ImageContentBlock
+  title="Book Your Consultation Today"
+  copy="Get in touch to find out more and speak to one of our experts."
+  image={ctaImage1}
+  href="https://www.allurespa.co.uk/treatments/non-surgical-rhinoplasty"
+  linkText="BOOK NOW"
+/>
+</div>
+
+ 
+
+<!--Start of section--><div class="max-w-7xl mt-0 pb-0 mb-10 mx-auto px-4 lg:px-0">
+    
+  <LandingSectionTitle classes="pb-4 text-left">What to Expect During Your Non-Surgical Rhinoplasty Procedure
+</LandingSectionTitle>
+  <div
+       class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+     >
+     <div class="group relative flex flex-col">
+
+  <p class="mb-2">
+    If you're considering Non-Surgical Rhinoplasty, it's natural to wonder what the procedure entails. During your initial consultation, your provider will examine your nose and discuss your desired results with you to determine if Non-Surgical Rhinoplasty is right for you. 
+</p>
+  <p class="mb-2">
+    Once you've decided to proceed with the procedure, your provider will use a small needle to inject the filler into specific areas of your nose. 
+
+</p>
+  <p class="mb-2">
+    The entire procedure usually takes less than an hour, and you can return to your normal activities immediately afterwards.
+
+</p>
+  <p class="mb-2">
+    While you may experience some mild swelling or bruising, these side effects typically subside within a few days. 
+
+</p>
+  <p class="mb-2">
+    You'll be able to see the results of your Non-Surgical Rhinoplasty immediately, and they can last anywhere from six months to two years, depending on the type of filler used. 
+
+</p>
+  <p class="mb-2">
+    Non-Surgical Rhinoplasty is an effective way to improve the shape of your nose without undergoing surgery. It offers quick, immediate results with minimal downtime and can help you achieve the perfect balance of facial features. 
+
+</p>
+<p class="mb-2">
+    If you have any questions about the procedure or are interested in learning more, please don't hesitate to contact us. Our experienced professionals can help guide you through the process and ensure that you get the results you're looking for. We look forward to hearing from you!
+</p>
+
+
+  
+  </div>
+  <div class="group relative flex flex-col overflow-hidden">
+    
+    <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+      <Image
+      class="h-full w-full object-cover rounded-lg  lg:mt-10 shadow-lg mb-2"
+      src={rhynoImage4}
+      alt="Image of oil being poured onto hand"
+      width={800}
+      height={600}
+      format={"webp"}
+    />
+    
+  
+    <h4 class="text-xs mt-2 text-right hidden md:block">Achieve a new look with a non surgical nose job, which uses hyaluronic acid
+
+    </h4>
+    </div>
+    <h4 class="text-xs mt-2 text-right md:hidden">Achieve a new look with a non surgical nose job, which uses hyaluronic acid
+    </h4>
+  </div>
+  </div>
+</div><!-- End of Section -->
+
+
+
+<!-- START OF FAQ SECTION -->
+
+<div class="bg-gray-50 mb-20">
+  <div class="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8">
+
+
+    <LandingSectionTitle classes="pb-4 text-left">Frequently Asked Questions
+
+    </LandingSectionTitle>    
+    
+ <p class="mb-10">
+    If you're considering Non-Surgical Rhinoplasty, you are likely to have some questions about the procedure. Here are some of the most frequently asked questions.
+ </p>
+    <div>
+      <dl class="space-y-16 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-16 sm:space-y-0 lg:grid-cols-3 lg:gap-x-10">
+      
+
+        
+
+        <!-- More questions... -->
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">Is Non-Surgical Rhinoplasty Safe?
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">
+            Non-Surgical Rhinoplasty is generally considered safe when performed by a qualified and experienced provider. However, like any medical procedure, there are potential risks and complications, such as infection, bleeding, and allergic reactions. Your provider will discuss these risks with you during your consultation and answer any questions you may have. 
+          </dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">Is Non-Surgical Rhinoplasty Painful?
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">
+            Most patients report little to no pain during Non-Surgical Rhinoplasty. Our fully qualified staff may use a topical numbing cream or a local anaesthetic to minimize any discomfort during the procedure.
+          </dd>
+        </div>
+
+        
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">How Long Does Non-Surgical Rhinoplasty Last?
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">
+            The results of Non-Surgical Rhinoplasty can last anywhere from six months to two years, depending on the type of filler used and how quickly your body metabolizes it. However, the results are not permanent, and you may need to schedule touch-up appointments to maintain your desired look.
+          </dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">What Are the Risks of Non-Surgical Rhinoplasty?
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">
+            As with any medical procedure, there are potential risks and complications associated with Non-Surgical Rhinoplasty. These include infection, bleeding, allergic reactions, and damage to the skin or underlying tissues. Your provider will discuss these risks with you during your consultation.
+          </dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">Who Is a Good Candidate for Non-Surgical Rhinoplasty?
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">
+            Good candidates for Non-Surgical Rhinoplasty are individuals who are unhappy with the shape or appearance of their nose, but do not want to undergo traditional rhinoplasty surgery. Candidates should be in good overall health and have realistic expectations for the results of the procedure.  
+          </dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">How Long Does Non-Surgical Rhinoplasty Take?
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">
+            Non-Surgical Rhinoplasty is a quick procedure that typically takes between 15 to 30 minutes to complete. After your provider applies a numbing cream or local anaesthesia, they will inject small amounts of filler into the target areas of your nose to achieve your desired look. You can expect to be able to return to your regular activities immediately after the procedure, with only mild swelling or bruising that typically resolves within a few days.
+          </dd>
+        </div>
+
+        
+
+        </dl>
+      
+  
+    </div>
+  </div>
+</div>
+<!-- END OF FAQ SECTION -->
+<HeroDecorator
+title={`From ${town} and looking for a luxury spa?`}
+sub={`Our new luxury spa opened in the City of London(Next to cannon street station) has the latest treatments at affordable prices.`}
+town={town}
+client:load
+/>
+
+<div class="max-w-7xl mx-auto lg:rounded-lg mb-10 overflow-hidden">
+  <ImageContentBlock
+  title="Book Your Consultation Today"
+  copy="Get in touch to find out more and speak to one of our experts."
+  image={ctaImage1}
+  href="https://www.allurespa.co.uk/treatments/non-surgical-rhinoplasty"
+  linkText="BOOK NOW"
+/>
+</div>
+
+    
+  </main>
+</Layout>

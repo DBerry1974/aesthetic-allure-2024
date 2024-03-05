@@ -1,0 +1,542 @@
+---
+
+export const prerender = true
+import Content from "../../../components/Content/LandingContent.astro";
+import LandingSubPageHero from "../../../components/Hero/LandingSubPageHero.astro";
+import ImageContentBlock from "../../../components/ImageContentBlock.astro";
+import Section from "../../../components/Section/Section.astro";
+import LandingSectionTitle from "../../../components/Typography/LandingSectionTitle.astro";
+import Layout from "../../../layouts/LandingLayout.astro";
+import blogBanner from "../../../assets/images/model-stare.jpeg";
+import BlogPostListing from "../../../components/Blog/BlogPostListing.astro";
+import headImage from "../../../assets/images/blog/dermal1.jpg";
+import headImage2 from "../../../assets/images/blog/blog-img1.jpg";
+import headImage3 from "../../../assets/images/blog/hifu.jpeg";
+import awiImage1 from "../../../assets/images/awi2.jpg";
+import awiImage2 from "../../../assets/images/awi1.jpg";
+import awiImage3 from "../../../assets/images/awi3.jpg";
+import awiImage4 from "../../../assets/images/awi4.jpg";
+import awiImage5 from "../../../assets/images/awi8.jpg";
+import awiImage6 from "../../../assets/images/awi9.jpg";
+import awiImage7 from "../../../assets/images/face1.jpg";
+import ctaImage1 from "../../../assets/images/homepage-face.jpeg";
+
+import quick from "../../../assets/images/stopwatch.jpg";
+import HeroDecorator from "../../../components/Decoraters/";
+
+import { Image } from 'astro:assets'
+
+import { getSpecificTowns } from "../../../lib/getTowns";
+
+export async function getStaticPaths() {
+  const towns = await getSpecificTowns();
+
+  const paths = [];
+  for (let i = 0; i < towns.length; i++) {
+    const town = towns[i];
+    let path = town
+      .toLowerCase()
+      .replace(/ /g, "-")
+      .replace(/\`/, "")
+      .replace(/\./, "")
+      .replace(/\'/, "");
+    paths.push({ params: { slug: path }, props: { town } });
+  }
+
+  return paths;
+}
+
+const { town } = Astro.props;
+
+---
+
+<Layout title="Anti-wrinkle injections" description="Anti-wrinkle injections from Aesthetic Allure Medical Spa and Skin Clinic. Our comprehensive services help you achieve your optimal skin health and beauty goals.">
+  <LandingSubPageHero
+    heading="Anti-wrinkle injections"
+  
+    headerCopy={`Anti wrinkle Injections - also known as botox injections - are a popular, non-surgical aesthetic treatment option to reduce or eliminate dynamic facial lines and wrinkles such as crow’s feet, frown lines, forehead lines, bunny lines, marionette lines, and more.  
+
+At Aesthetic Allure Medical Spa and Skin Clinic, we understand the importance of skin health and beauty. We believe in providing the highest quality treatments tailored to each client's individual needs. 
+
+Our experienced practitioners are trained in using anti-wrinkle injections to achieve natural-looking results for all skin types and tones. We strive to create a safe, comfortable environment where clients can feel confident that their treatment will be administered with care and expertise.`}
+    image={blogBanner}
+  />
+ <main>
+  <!--Start of section--><div class="max-w-7xl my-10 mx-auto px-4 lg:px-0">
+    <LandingSectionTitle classes="pb-4 mt-6 text-left">Anti-wrinkle injections {town}
+
+    </LandingSectionTitle>
+    
+    <div
+         class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+       >
+       <div class="group relative flex flex-col">
+
+    <p class="mb-2">
+      Anti-wrinkle injections have become an increasingly popular non-surgical aesthetic treatment option to reduce or eliminate dynamic facial lines and wrinkles. These injections are commonly known as “botox” and can be used on various areas of the face including crow’s feet, frown lines, forehead lines, bunny lines and marionette lines. 
+    </p>
+    <p class="mb-2">
+      At Aesthetic Allure Medical Spa and Skin Clinic, we specialize in providing the highest quality skin treatments tailored to each individual’s unique needs and goals. Our experienced aesthetic medical professionals are here to help you achieve your desired look with anti-wrinkle injections. 
+    </p>
+    <p class="mb-2">
+      The effectiveness of anti-wrinkle injections depends on the targeted facial area and the dose needed to achieve the desired results. The procedure involves a series of small injections that are strategically placed in order to relax the facial muscles responsible for forming wrinkles. After the injection, you may experience some temporary side effects such as swelling, redness, and tenderness around the injection site. 
+    </p>
+    <p class="mb-2">
+      The effects of anti-wrinkle injections can last anywhere between three to four months depending on individual factors such as age, lifestyle and skin type. To maintain the desired results, you may require follow up treatments every three or four months. 
+    </p>
+    
+    </div>
+    <div class="group relative flex flex-col overflow-hidden">
+      
+      <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+        <Image
+        class="h-full w-full object-cover rounded-lg  shadow-lg mb-2"
+        src={headImage2}
+        alt="Image of oil being poured onto hand"
+        width={800}
+        height={600}
+        format={"webp"}
+      />
+      
+      </div>
+      
+    </div>
+    </div>
+  <div class="max-w-7xl my-10 mx-auto px-4 lg:px-0">
+      <p class="mb-2">
+        At Aesthetic Allure Medical Spa and Skin Clinic, we are committed to providing the highest quality skin treatments that suit each individual’s unique needs. Schedule an appointment with us today and find out if anti-wrinkle injections are right for you! 
+      </p>
+  
+    </div>
+  </div><!-- End of Section -->
+
+
+  <div class="max-w-7xl mx-auto lg:rounded-lg mb-10 overflow-hidden">
+    <ImageContentBlock
+    title="Book Your Consultation Today"
+    copy="Get in touch to find out more and speak to one of our experts."
+    image={ctaImage1}
+    href="https://www.allurespa.co.uk/treatments/anti-wrinkle-injections"
+    linkText="BOOK NOW"
+  />
+  </div>
+
+  
+
+
+     <!--START OF SECTION --> <div
+    class="mx-auto max-w-2xl  px-4 lg:max-w-7xl "
+  >
+    <LandingSectionTitle classes="pb-12 lg:py-12 md:text-center">The Benefits of Anti-wrinkle Injections 
+    </LandingSectionTitle>
+    <div
+      class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+    >
+
+    <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+      <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+        <Image
+          width={1000}
+          height={600}
+          src={awiImage1}
+          alt="Anti-wrinkle Injections"
+          format="webp"
+          class="h-full w-full object-cover object-center sm:h-full sm:w-full"
+        />
+      </div>
+      <div class="flex flex-1 flex-col space-y-2 py-4">
+        <h3 class="text-lg font-bold text-gray-900">
+          Reduces Facial Line and Wrinkles
+        </h3>
+        <p class="text-gray-500">
+          Anti-wrinkle injections are an effective, non-surgical treatment option to help reduce the appearance of dynamic facial lines and wrinkles such as crow’s feet, frown lines, forehead lines, bunny lines, marionette lines. This popular aesthetic treatment relaxes muscles that cause wrinkles when you move your face and helps make skin appear smoother and younger looking.  
+        </p>
+      </div>
+    </div>
+
+    <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+      <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+        <Image
+          width={1000}
+          height={600}
+          src={awiImage2}
+          alt="Anti-wrinkle Injections"
+          format="webp"
+          class="h-full w-full object-cover object-center sm:h-full sm:w-full"
+        />
+      </div>
+      <div class="flex flex-1 flex-col space-y-2 py-4">
+        <h3 class="text-lg font-bold text-gray-900">
+          Non-Surgical Option
+        </h3>
+        <p class="text-gray-500">
+          The great thing about anti-wrinkle injections is that it’s a non-invasive procedure with very minimal downtime – meaning there is no cutting or stitching required! After the injection is administered by our experienced medical team at Aesthetic Allure Medical Spa and Skin Clinic you can immediately resume everyday activities without any further disruption to your routine. 
+        </p>
+      </div>
+    </div>
+  </div>
+</div><!--END OF SECTION -->
+
+
+ <!--START OF SECTION --> <div
+ class="mx-auto max-w-2xl px-4 lg:max-w-7xl "
+ >
+   <div
+     class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+   >
+
+   <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+     <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+       <Image
+         width={1000}
+         height={600}
+         src={quick}
+         alt="backshoulderneckmassage"
+         format="webp"
+         class="h-full w-full object-cover object-center sm:h-full sm:w-full"
+       />
+     </div>
+     <div class="flex flex-1 flex-col space-y-2 py-4">
+       <h3 class="text-lg font-bold text-gray-900">
+        Quick and Easy Treatment
+      </h3>
+       <p class="text-gray-500">
+        Another benefit of anti wrinkle injections is that they offer immediate results with no downtime after their administration by our experienced medical team at Aesthetic Allure Medical Spa and Skin Clinic - so you can get back to your day as soon as possible! The entire process takes around 10 minutes - so it won't eat up too much of your time either! 
+    </p>
+     </div>
+   </div>
+
+   <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+     <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+       <Image
+         width={1000}
+         height={600}
+         src={awiImage3}
+         alt="backshoulderneckmassage"
+         format="webp"
+         class="h-full w-full object-cover object-center sm:h-full sm:w-full"
+       />
+     </div>
+     <div class="flex flex-1 flex-col space-y-2 py-4">
+       <h3 class="text-lg font-bold text-gray-900">
+        Long-lasting Results
+      </h3>
+       <p class="text-gray-500">
+        One of the biggest benefits of anti wrinkle injections is that they provide long lasting results, with some effects lasting up to four months. This means that you won’t have to worry about frequent trips to the spa or skin clinic in order to maintain your desired look!
+      </p>
+     </div>
+   </div>
+ </div>
+</div><!--END OF SECTION -->
+
+
+ <!--Start of section--><div class="max-w-7xl mt-0 pb-0 mb-10 mx-auto px-4 lg:px-0">
+    
+  <LandingSectionTitle classes="pb-4 text-left">Safety and Side Effects of Anti-wrinkle Injections 
+  </LandingSectionTitle>
+  <div
+       class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+     >
+     <div class="group relative flex flex-col">
+
+  <p class="mb-2">
+    Though the side effects of anti-wrinkle injections are generally minor and temporary, it's important to understand that there are some potential risks associated with the procedure. It's safest to have the procedure done by a qualified, experienced medical professional like those at Aesthetic Allure Medical Spa and Skin Clinic. 
+  </p>
+  <p class="mb-2">
+    Our team of professionals are highly trained in the administration of anti-wrinkle injections and will take all necessary precautions to ensure your safety. 
+  </p>
+  <p class="mb-2">
+    Common side effects may include mild swelling, redness or bruising at the injection site; however, these should subside after a few days. 
+  </p>
+  <p class="mb-2">
+    In rare cases, some patients may experience an allergic reaction to the injection; which can be treated with an antihistamine. If you have any concerns or questions about safety or side effects of anti-wrinkle injections, please don’t hesitate to contact us. 
+  </p>
+  <p class="mb-2">
+    In rare cases, some patients may experience an allergic reaction to the injection; which can be treated with an antihistamine. If you have any concerns or questions about safety or side effects of anti-wrinkle injections, please don’t hesitate to contact us. 
+  </p>
+  <p class="mb-2">
+    At Aesthetic Allure Medical Spa and Skin Clinic, we take your safety and satisfaction seriously and will always do our best to ensure a safe, pleasant experience. 
+  </p>
+
+
+  
+  </div>
+  <div class="group relative flex flex-col overflow-hidden">
+    
+    <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+      <Image
+      class="h-full w-full object-cover rounded-lg  shadow-lg mb-10"
+      src={awiImage4}
+      alt="Image of oil being poured onto hand"
+      width={800}
+      height={600}
+      format={"webp"}
+    />
+    
+    </div>
+    
+  </div>
+  </div>
+
+</div><!-- End of Section -->
+
+
+<div class="max-w-7xl mx-auto lg:rounded-lg mb-20 overflow-hidden">
+  <ImageContentBlock
+  title="Book Your Consultation Today"
+  copy="Get in touch to find out more and speak to one of our experts."
+  image={ctaImage1}
+  href="https://www.allurespa.co.uk/treatments/anti-wrinkle-injections"
+  linkText="BOOK NOW"
+/>
+</div>
+
+ <!--Start of section--><div class="max-w-7xl my-10 mx-auto px-4 lg:px-0">
+  <div
+  class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-3 lg:gap-x-8"
+>
+  
+  <div class="group relative flex flex-col col-span-2">
+
+  <LandingSectionTitle classes="pb-4 mt-6 text-left">The Latest Techniques in Anti-wrinkle Injection Treatments 
+  </LandingSectionTitle>
+  <p class="mb-2">
+    Anti-wrinkle injections are a popular and effective way to reduce the appearance of wrinkles and fine lines in the face. The treatments involve the administration of muscle relaxants into targeted facial areas, like the forehead, brows, and around the eyes. These injections can effectively reduce or even eliminate wrinkles, allowing you to achieve a more youthful look. 
+  </p>
+  <p class="mb-2">
+    The latest techniques in anti-wrinkle injection treatments have made the procedure easier and more precise than ever before. For example, some of the newest treatments feature smaller needles that make it much less painful to administer the injections. This also ensures that the medication is delivered accurately to specific areas without causing any damage to surrounding tissues or cells.
+  </p>
+ 
+  </div>
+  <div class="group relative flex flex-col overflow-hidden">
+    
+    <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+      <Image
+      class="h-full w-full object-cover rounded-lg lg:mt-10 shadow-lg mb-2"
+      src={awiImage5}
+      alt="Image of oil being poured onto hand"
+      width={800}
+      height={600}
+      format={"webp"}
+    />
+    <h4 class="text-xs mt-2 text-right hidden md:block">Botulinum toxin injections - better known as Botox
+    </h4>
+    </div>
+    <h4 class="text-xs mt-2 text-right md:hidden">Botulinum toxin injections - better known as Botox
+    </h4>
+  </div>
+  </div>
+</div><!-- End of Section -->
+
+<!--Start of section--><div class="max-w-7xl my-10 mx-auto px-4 lg:px-0">
+  <div
+  class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-3 lg:gap-x-8"
+>
+  
+  <div class="group relative flex flex-col col-span-2">
+
+  <LandingSectionTitle classes="pb-4 mt-6 text-left">What is Botox?
+  </LandingSectionTitle>
+  <p class="mb-2">
+    Botox is a brand name for the drug botulinum toxin, which is produced by the bacterium Clostridium botulinum. It is primarily used as an anti-wrinkle treatment, as it works to reduce wrinkles in the face by temporarily paralyzing facial muscles. 
+  </p>
+  <p class="mb-2">
+    When injected into specific facial muscles, Botox relaxes the muscle, preventing it from contracting and causing wrinkles in the skin. The effects of Botox typically last for three to four months, after which additional injections will be needed to maintain the desired results. 
+  </p>
+  <p class="mb-2">
+    In addition to being used as an anti-wrinkle treatment, Botox is also used to treat a variety of medical conditions such as muscle spasms, excessive sweating, and lazy eye. 
+  </p>
+ 
+  </div>
+  <div class="group relative flex flex-col overflow-hidden">
+    
+    <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+      <Image
+      class="h-full w-full object-cover rounded-lg lg:mt-10 shadow-lg mb-2"
+      src={awiImage6}
+      alt="Image of oil being poured onto hand"
+      width={800}
+      height={600}
+      format={"webp"}
+    />
+    <h4 class="text-xs mt-2 text-right hidden md:block">Botulinum toxin injections - better known as Botox
+    </h4>
+    </div>
+    <h4 class="text-xs mt-2 text-right md:hidden">Botulinum toxin injections - better known as Botox
+    </h4>
+  </div>
+  </div>
+</div><!-- End of Section -->
+
+<!--Start of section--><div class="max-w-7xl mt-0 pb-0 mb-10 mx-auto px-4 lg:px-0">
+    
+  <LandingSectionTitle classes="pb-4 text-left">Is Anti wrinkle Injection Treatment Right For You? 
+  </LandingSectionTitle>
+  <div
+       class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+     >
+     <div class="group relative flex flex-col">
+
+  <p class="mb-2">
+    Anti-wrinkle injections can be a great way to restore a youthful, glowing appearance with minimal pain and discomfort. However, it’s important to consider your individual needs and the expected results before deciding if anti-wrinkle injection treatments are right for you. 
+  </p>
+  <p class="mb-2">
+    Generally, anti-wrinkle injections work best on dynamic wrinkles, which are those that are caused by repetitive facial expressions. If you have static wrinkles, which are present even when your face is relaxed, anti-wrinkle injections may not be the best solution for you.
+  </p>
+  <p class="mb-2">
+    Common side effects may include mild swelling, redness or bruising at the injection site; however, these should subside after a few days. 
+  </p>
+  <p class="mb-2">
+    It’s also important to remember that anti-wrinkle injection treatments are not permanent solutions and require regular touchups for lasting results. If you’re looking for a more permanent solution, you may want to consider other options such as laser treatments or chemical peels.
+  </p>
+  <p class="mb-2">
+    In rare cases, some patients may experience an allergic reaction to the injection; which can be treated with an antihistamine. If you have any concerns or questions about safety or side effects of anti-wrinkle injections, please don’t hesitate to contact us. 
+  </p>
+  <p class="mb-2">
+    Ultimately, it’s best to talk the experts at Aesthetic Allure before deciding whether anti-wrinkle injections are the right choice for you. We will be able to assess your individual needs and help you make an informed decision.
+  </p>
+
+
+  
+  </div>
+  <div class="group relative flex flex-col overflow-hidden">
+    
+    <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+      <Image
+      class="h-full w-full object-cover rounded-lg  lg:mt-10 shadow-lg mb-2"
+      src={awiImage7}
+      alt="Image of oil being poured onto hand"
+      width={800}
+      height={600}
+      format={"webp"}
+    />
+    
+    <h4 class="text-xs mt-2 text-right hidden md:block">Botox treatment for Facial wrinkles
+    </h4>
+    </div>
+    <h4 class="text-xs mt-2 text-right md:hidden">Botox treatment for Facial wrinkles
+    </h4>
+  </div>
+  </div>
+</div><!-- End of Section -->
+
+
+
+
+<!-- START OF FAQ SECTION -->
+
+<div class="bg-gray-50 mb-20">
+  <div class="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8">
+
+
+    <LandingSectionTitle classes="pb-4 text-left">Anti Wrinkle Injections - FAQ's 
+    </LandingSectionTitle>    
+    
+ 
+    <div>
+      <dl class="space-y-16 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-16 sm:space-y-0 lg:grid-cols-3 lg:gap-x-10">
+      
+
+        
+
+        <!-- More questions... -->
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">What are anti-wrinkle injections?
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">Anti-wrinkle injections are treatments that involve the administration of muscle relaxants into targeted facial areas, like the forehead, brows, and around the eyes. 
+          </dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">How do anti-wrinkle injections work?
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">Anti-wrinkle injections work by relaxing the muscles that cause wrinkles when making facial expressions, preventing them from contracting and creating lines in the skin. 
+          </dd>
+        </div>
+
+        
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">Are anti-wrinkle injections painful?
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">The latest anti-wrinkle injection treatments feature smaller needles which makes it much less painful to administer. 
+
+          </dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">Are there any side effects of the treatment?
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">Most people don’t experience any major side effects after receiving anti-wrinkle injections; however there may be some temporary redness or swelling in treated areas which usually subsides within a few hours after treatment is completed.
+          </dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">How long do the effects of an anti wrinkle injection last for? 
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">The effects of an anti wrinkle injection tend to last between 4 to 6 months though this can vary depending on how quickly you metabolize the medication.  
+          </dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">When will I start to see results from an anti-wrinkle injection treatment? 
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">You will start to see results from an anti-wrinkle injection treatment within 2 – 14 days depending on your individual needs and lifestyle habits; generally you should notice an improvement in your appearance right away and then increased benefit over time as the full effects of treatments kick in gradually over time as well as with multiple appointments/treatments if needed.
+          </dd>
+        </div>
+
+        
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">How often should I get Anti Wrinkle Injection Treatments done in order to maintain results ?
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">The frequency of anti-wrinkle injection treatments will depend on your individual needs and the effects you hope to achieve. Generally, it is recommended to have repeat treatments every 3 months in order to maintain results as the muscle relaxants will gradually wear off over time. It's also important to make sure you are following up with your practitioner for any adjustments or follow-up appointments if needed.
+          </dd>
+        </div>
+
+       
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">Can I still make facial expressions after having Anti Wrinkle Injection Treatments?  
+        
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">It's important to prepare for an anti-wrinkle injection treatment by avoiding any facial treatments, alcohol, blood thinning medication and supplements, and aspirin at least 2 weeks prior to your appointment. After the treatment has been administered, it is recommended that you avoid strenuous exercise for 24 hours following your appointment and apply cold compresses periodically in order to reduce swelling. Generally no other special instructions are needed as long as you follow up with subsequent appointments as advised by your practitioner.
+          </dd>
+        </div>
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">Is there anything I need to do before or after my appointment for Anti Wrinkle Injections Treatments? 
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">It's important to prepare for an anti-wrinkle injection treatment by avoiding any facial treatments, alcohol, blood thinning medication and supplements, and aspirin at least 2 weeks prior to your appointment. After the treatment has been administered, it is recommended that you avoid strenuous exercise for 24 hours following your appointment and apply cold compresses periodically in order to reduce swelling. Generally no other special instructions are needed as long as you follow up with subsequent appointments as advised by your practitioner.
+          </dd>
+        </div>
+  
+        
+
+      </dl>
+      
+  
+    </div>
+  </div>
+</div>
+<!-- END OF FAQ SECTION -->
+<HeroDecorator
+title={`From ${town} and looking for a luxury spa?`}
+sub={`Our new luxury spa opened in the City of London(Next to cannon street station) has the latest treatments at affordable prices.`}
+town={town}
+client:load
+/>
+
+
+<div class="max-w-7xl mx-auto lg:rounded-lg mb-10 overflow-hidden">
+  <ImageContentBlock
+  title="Book Your Consultation Today"
+  copy="Get in touch to find out more and speak to one of our experts."
+  image={ctaImage1}
+  href="https://www.allurespa.co.uk/treatments/anti-wrinkle-injections"
+  linkText="BOOK NOW"
+/>
+</div>
+
+    
+  </main>
+</Layout>

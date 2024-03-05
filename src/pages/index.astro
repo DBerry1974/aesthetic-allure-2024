@@ -1,16 +1,59 @@
 ---
-
+import Content from "../components/Content/Content.astro";
+import SectionTitle from "../components/Typography/SectionTitle.astro";
+import Hero from "../components/Hero/Hero.astro";
+import Testimonials from "../components/Testimonials/Testimonials.astro";
+import Layout from "../layouts/Layout.astro";
+import Section from "../components/Section/Section.astro";
+import { Image } from 'astro:assets'
+const treatments = await Astro.glob("./treatments/*.md");
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Aesthetic Allure.">
+  <Hero />
+  <main>
+    <Section background="white">
+      <SectionTitle>The Latest Innovative Skin Treatments</SectionTitle>
+      <Content>
+        <p>
+          With these state-of-the-art skin treatments combined with personalized
+          care from our expert staff, we can help you achieve the skin you've
+          always wanted.
+        </p>
+        <p class="text-center">
+          Our experienced team provide a wide range of services including:
+        </p>
+        <ul role="list" class="divide-y divide-gray-200">
+          {
+            treatments.map((treatment) => (
+              <li class="flex py-2">
+                <Image
+                  src={treatment.frontmatter.featuredImage}
+                  alt={treatment.frontmatter.title}
+                  width={200}
+                  height={200}
+                  class="h-10 w-10 rounded-full"
+                />
+                <a class="no-underline mb-0" href={treatment.url}>
+                  <div class="ml-3">
+                    <p class="text-sm font-medium text-gray-900">
+                      {treatment.frontmatter.title}
+                    </p>
+                    <p class="text-sm font-light m-0 text-gray-500">
+                      {treatment.frontmatter.description}
+                    </p>
+                  </div>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+        <br />
+      </Content>
+    </Section>
+    <Section background="stone-100" gutterBottom>
+      <SectionTitle>Patient Testimonials</SectionTitle>
+      <Testimonials />
+    </Section>
+  </main>
+</Layout>

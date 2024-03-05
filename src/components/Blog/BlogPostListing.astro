@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets'
+
+interface Props {
+  image: string;
+  description: string;
+  title: string;
+  url: string;
+}
+const { image, description, title, url } = Astro.props;
+---
+
+<div class="flex flex-col overflow-hidden rounded-lg shadow-lg">
+  <div class="flex-shrink-0">
+    <a class="relative" href={url}>
+      <Image
+        class="h-48 w-full object-cover bg-blend-multiply"
+        src={image}
+        width={800}
+        aspectRatio={16 / 9}
+        alt="Image for the blog post"
+      />
+      <div class="absolute inset-0 bg-rose-300 mix-blend-multiply"></div>
+    </a>
+  </div>
+  <div class="flex flex-1 flex-col justify-between bg-white p-6">
+    <div class="flex-1">
+      <p class="text-xl font-serif text-gray-900">{title}</p>
+      <p class="mt-3 font-light text-base text-gray-500">
+        {description}
+      </p>
+      <a href={url} class="mt-2 block hover:underline hover:text-rose-300">
+        <p class="font-serif">Read More</p>
+      </a>
+    </div>
+  </div>
+</div>

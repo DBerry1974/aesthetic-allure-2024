@@ -1,0 +1,15 @@
+---
+interface Props {
+  background: "stone-100" | "white";
+  gutterBottom?: boolean;
+  classes?: string;
+}
+
+const { background, classes = "", gutterBottom = false } = Astro.props;
+---
+
+<section
+  class={`bg-${background} pt-16 ${gutterBottom ? "py-16" : ""} ${classes}`}
+>
+  <slot />
+</section>

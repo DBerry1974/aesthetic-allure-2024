@@ -1,0 +1,535 @@
+---
+export const prerender = true
+import Content from "../../../components/Content/LandingContent.astro";
+import LandingSubPageHero from "../../../components/Hero/LandingSubPageHero.astro";
+import ImageContentBlock from "../../../components/ImageContentBlock.astro";
+import Section from "../../../components/Section/Section.astro";
+import LandingSectionTitle from "../../../components/Typography/LandingSectionTitle.astro";
+import Layout from "../../../layouts/LandingLayout.astro";
+import blogBanner from "../../../assets/images/profhilo1.webp";
+import BlogPostListing from "../../../components/Blog/BlogPostListing.astro";
+import headImage from "../../../assets/images/blog/dermal1.jpg";
+import headImage2 from "../../../assets/images/blog/blog-img1.jpg";
+import headImage3 from "../../../assets/images/blog/hifu.jpeg";
+import awiImage3 from "../../../assets/images/awi3.jpg";
+import profImage2 from "../../../assets/images/profhilo2.jpg";
+import profImage3 from "../../../assets/images/profhilo3.jpg";
+import profImage4 from "../../../assets/images/profhilo4.jpg";
+import profImage5 from "../../../assets/images/profhilo5.jpg";
+import hydration from "../../../assets/images/hydration.jpg";
+import elasticity from "../../../assets/images/elasticity.jpg";
+import wrinkles from "../../../assets/images/wrinkles1.jpg";
+import noninvasive from "../../../assets/images/non-invasive.jpg";
+
+import downtime from "../../../assets/images/nodowntime1.jpg";
+import nosejob from "../../../assets/images/nosejob1.jpg";
+import cost from "../../../assets/images/cost.jpg";
+import natural from "../../../assets/images/natural1.jpg";
+
+import ctaImage1 from "../../../assets/images/homepage-face.jpeg";
+
+import quick from "../../../assets/images/stopwatch.jpg";
+
+import { Image } from 'astro:assets'
+
+import HeroDecorator from "../../../components/Decoraters/";
+import { getSpecificTowns } from "../../../lib/getTowns";
+
+export async function getStaticPaths() {
+  const towns = await getSpecificTowns();
+
+  const paths = [];
+  for (let i = 0; i < towns.length; i++) {
+    const town = towns[i];
+    let path = town
+      .toLowerCase()
+      .replace(/ /g, "-")
+      .replace(/\`/, "")
+      .replace(/\./, "")
+      .replace(/\'/, "");
+    paths.push({ params: { slug: path }, props: { town } });
+  }
+
+  return paths;
+}
+
+const { town } = Astro.props;
+---
+
+<Layout title="Profhilo Treatment. Aesthetic Allure Medical Spa & Skin Clinic" description="Profhilo Treatment from Aesthetic Allure Medical Spa and Skin Clinic. Comprehensive services help you achieve your skin health & beauty goals.">
+  
+  <LandingSubPageHero
+    heading="Profhilo"
+  
+    headerCopy={`Profhilo is a revolutionary skin treatment that offers numerous solutions to the everyday skin problems we face. It is extremely effective in treating skin laxity and restoring elasticity. The process involves remodelling collagen and elastin fibres on the dermal matrix which allows for instantaneous counteracting of skin laxity. Revitalize Your Skin with Profhilo - the skin booster that targets skin cell receptors for significant tissue improvement. Experience the benefits of two treatment sessions for a more radiant and youthful appearance.`}
+    image={blogBanner}
+  />
+ <main>
+
+ 
+ <!--Start of section--><div class="max-w-7xl my-10 mx-auto px-4 lg:px-0">
+    <LandingSectionTitle classes="pb-4 mt-6 text-left">Profhilo Treatment {town}
+       
+    </LandingSectionTitle>
+    
+    
+    <div
+         class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+       >
+       <div class="group relative flex flex-col">
+        <LandingSectionTitle classes="pb-4 mt-6 text-left">What is Profhilo?
+        </LandingSectionTitle>
+       
+    <p class="mb-2">
+        Profhilo is a type of cosmetic treatment that is used to improve the quality of the skin by boosting hydration and collagen production. It is a non-surgical treatment that involves injecting hyaluronic acid, which is a substance that naturally occurs in the body and helps to keep the skin hydrated.
+    </p>
+    <p class="mb-2">
+        The treatment is typically used on the face, neck, and hands to help reduce the appearance of fine lines, wrinkles, and other signs of ageing. It works by stimulating the production of collagen and elastin, which are two proteins that are essential for maintaining the skin's elasticity and firmness.
+    </p>
+    <p class="mb-2">
+        Unlike other cosmetic treatments that are designed to add volume to the face, such as dermal fillers, Profhilo does not create a significant change in the facial structure. Instead, it is used to enhance the natural beauty of the skin by providing a subtle improvement in texture, tone, and overall appearance.
+    </p>
+    <p class="mb-2">
+        The treatment is usually performed in a series of two to three sessions, with each session spaced about four weeks apart. The effects of the treatment can last for up to six months or longer, depending on the individual's skin type and other factors.
+    </p>
+    
+    </div>
+    <div class="group relative flex flex-col overflow-hidden">
+      
+      <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+        <Image
+        class="h-full w-full object-cover rounded-lg  shadow-lg mb-2"
+        src={profImage2}
+        alt="Image of oil being poured onto hand"
+        width={800}
+        height={600}
+        format={"webp"}
+      />
+      </div>
+    </div>
+  </div>
+</div><!-- End of Section -->
+
+
+  <div class="max-w-7xl mx-auto lg:rounded-lg mb-10 overflow-hidden">
+    <ImageContentBlock
+    title="Book Your Consultation Today"
+    copy="Get in touch to find out more and speak to one of our experts."
+    image={ctaImage1}
+    href="https://www.allurespa.co.uk/treatments/profhilo"
+    linkText="BOOK NOW"
+  />
+  </div>
+
+   <!--Start of section--><div class="max-w-7xl mt-0 pb-0 mb-10 mx-auto px-4 lg:px-0">
+    
+    <LandingSectionTitle classes="pb-4 text-left">How Does Profhilo Work?
+    </LandingSectionTitle>
+    <div
+         class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+       >
+       <div class="group relative flex flex-col">
+  
+    <p class="mb-2">
+        Profhilo works by using hyaluronic acid, a substance that naturally occurs in the body and is responsible for keeping the skin hydrated and plump. The treatment involves injecting a series of small amounts of hyaluronic acid into specific areas of the skin, such as the face, neck, and hands.
+    </p>
+    <p class="mb-2">
+        Once injected, the hyaluronic acid works to stimulate the production of collagen and elastin, two proteins that are essential for maintaining the skin's elasticity and firmness. Over time, the increased production of collagen and elastin can help to improve the texture, tone, and overall appearance of the skin.
+    </p>
+    <p class="mb-2">
+        Unlike other treatments that are designed to add volume to the face, such as dermal fillers, Profhilo does not create a significant change in the facial structure. Instead, it is used to enhance the natural beauty of the skin by providing a subtle improvement in texture and tone. 
+    </p>
+    <p class="mb-2">
+        The treatment is typically performed in a series of two to three sessions, with each session spaced about four weeks apart. The results of the treatment can last for up to six months or longer, depending on the individual's skin type and other factors.
+    </p>
+  
+  
+    
+    </div>
+    <div class="group relative flex flex-col overflow-hidden">
+      
+      <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+        <Image
+        class="h-full w-full object-cover rounded-lg  shadow-lg mb-10"
+        src={profImage3}
+        alt="Image of oil being poured onto hand"
+        width={800}
+        height={600}
+        format={"webp"}
+      />
+      
+      <h4 class="text-xs text-right hidden md:block -mt-8">Profhilo is a hyaluronic acid moisturising treatment that can effectively treat skin laxity 
+      </h4>
+      </div>
+      <h4 class="text-xs mt-2 text-right md:hidden">Profhilo is a hyaluronic acid moisturising treatment that can effectively treat skin laxity
+      </h4>
+    </div>
+    </div>
+  </div><!-- End of Section -->
+
+  
+
+
+     <!--START OF SECTION --> <div
+    class="mx-auto max-w-2xl  px-4 lg:max-w-7xl "
+  >
+    <LandingSectionTitle classes="pb-12 lg:py-12 md:text-center">The Benefits of Profhilo Treatment
+    </LandingSectionTitle>
+    <p class="mb-10">
+        Profhilo is a safe and effective treatment for improving the quality of the skin and reducing the signs of aging. It can provide a number of benefits, including improved hydration, reduced appearance of fine lines and wrinkles, enhanced skin elasticity and firmness, minimal downtime, long-lasting results, non-invasiveness, and compatibility with other treatments.
+    </p>
+    <div
+      class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+    >
+
+    <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+      <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+        <Image
+          width={1000}
+          height={600}
+          src={hydration}
+          alt="Anti-wrinkle Injections"
+          format="webp"
+          class="h-full w-full object-cover object-center sm:h-full sm:w-full"
+        />
+      </div>
+      <div class="flex flex-1 flex-col space-y-2 py-4">
+        <h3 class="text-lg font-bold text-gray-900">
+            Improved Skin Hydration</h3>
+        <p>
+            Profhilo works by injecting hyaluronic acid into the skin, which helps to boost hydration levels. This can result in skin that looks and feels smoother and more supple.
+        </p>
+      </div>
+    </div>
+
+    <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+      <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+        <Image
+          width={1000}
+          height={600}
+          src={wrinkles}
+          alt="Anti-wrinkle Injections"
+          format="webp"
+          class="h-full w-full object-cover object-center sm:h-full sm:w-full"
+        />
+      </div>
+      <div class="flex flex-1 flex-col space-y-2 py-4">
+        <h3 class="text-lg font-bold text-gray-900">
+            Reduced Appearance of Fine Lines and Wrinkles
+        </h3>
+        <p>The increased production of collagen and elastin that results from Profhilo treatment can help to reduce the appearance of fine lines and wrinkles, giving the skin a more youthful appearance.</p>
+      </div>
+    </div>
+  </div>
+</div><!--END OF SECTION -->
+
+
+ <!--START OF SECTION --> <div
+ class="mx-auto max-w-2xl px-4 lg:max-w-7xl "
+ >
+   <div
+     class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+   >
+
+   <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+     <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+       <Image
+         width={1000}
+         height={600}
+         src={elasticity}
+         alt="backshoulderneckmassage"
+         format="webp"
+         class="h-full w-full object-cover object-center sm:h-full sm:w-full"
+       />
+     </div>
+     <div class="flex flex-1 flex-col space-y-2 py-4">
+       <h3 class="text-lg font-bold text-gray-900">
+        Enhanced Skin Elasticity and Firmness
+      </h3>
+       <p>
+        
+        By stimulating collagen and elastin production, Profhilo can help to improve the skin's elasticity and firmness, which can help to create a more lifted, toned appearance.</p>
+     </div>
+   </div>
+
+   <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+     <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+       <Image
+         width={1000}
+         height={600}
+         src={downtime}
+         alt="backshoulderneckmassage"
+         format="webp"
+         class="h-full w-full object-cover object-center sm:h-full sm:w-full"
+       />
+     </div>
+     <div class="flex flex-1 flex-col space-y-2 py-4">
+       <h3 class="text-lg font-bold text-gray-900">
+        Minimal Downtime
+      </h3>
+       <p>
+        
+Unlike some other cosmetic treatments, Profhilo has minimal downtime. Most people can return to their normal activities immediately after the procedure.</p>
+     </div>
+   </div>
+ </div>
+</div><!--END OF SECTION -->
+
+<!--START OF SECTION --> <div
+class="mx-auto max-w-2xl px-4 lg:max-w-7xl "
+>
+  <div
+    class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+  >
+
+  <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+    <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+      <Image
+        width={1000}
+        height={600}
+        src={natural}
+        alt="backshoulderneckmassage"
+        format="webp"
+        class="h-full w-full object-cover object-center sm:h-full sm:w-full"
+      />
+    </div>
+    <div class="flex flex-1 flex-col space-y-2 py-4">
+      <h3 class="text-lg font-bold text-gray-900">
+        Long-Lasting Results
+     </h3>
+      <p>
+       
+        While the effects of Profhilo are not permanent, they can last for up to six months or longer, depending on the individual's skin type and other factors. This means that people can enjoy their improved skin quality for an extended period of time.</p>
+    </div>
+  </div>
+
+  <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+    <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+      <Image
+        width={1000}
+        height={600}
+        src={noninvasive}
+        alt="backshoulderneckmassage"
+        format="webp"
+        class="h-full w-full object-cover object-center sm:h-full sm:w-full"
+      />
+    </div>
+    <div class="flex flex-1 flex-col space-y-2 py-4">
+      <h3 class="text-lg font-bold text-gray-900">
+        Non-Invasive Treatment
+     </h3>
+      <p>
+       
+        Profhilo is a non-invasive treatment, which means that it does not require any incisions or surgical procedures. This can make it a more appealing option for people who are not comfortable with more invasive treatments.
+        </p>
+    </div>
+  </div>
+</div>
+</div><!--END OF SECTION -->
+
+
+ <!--Start of section--><div class="max-w-7xl mt-0 pb-0 mb-10 mx-auto px-4 lg:px-0">
+    
+  <LandingSectionTitle classes="pb-4 text-left">Radiant and Younger-looking Skin 
+</LandingSectionTitle>
+  <div
+       class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+     >
+     <div class="group relative flex flex-col">
+
+  <p class="mb-2">
+    One of the primary benefits of Profhilo treatment is that it can help to create radiant, younger-looking skin. By improving hydration levels and stimulating collagen and elastin production, Profhilo can help to smooth out fine lines and wrinkles, improve skin texture and tone, and create a more lifted, toned appearance.
+</p>
+  <p class="mb-2">
+    Many people find that after Profhilo treatment, their skin appears more radiant and glowing, with a natural-looking improvement in overall skin quality. This can help to create a more youthful, vibrant appearance, without the need for more invasive procedures.
+</p>
+  <p class="mb-2">
+    In addition to improving the appearance of fine lines and wrinkles, Profhilo can also help to address other common signs of ageing, such as uneven skin tone, sun damage, and loss of elasticity. By working to improve the overall health and quality of the skin, Profhilo can help to create a more youthful, refreshed appearance that can boost self-confidence and overall well-being.
+</p>
+  <p class="mb-2">
+    Overall, if you're looking to achieve radiant, younger-looking skin, Profhilo may be a great option to consider. It's a safe and effective treatment that can provide long-lasting results, without the need for surgery or other invasive procedures. With minimal downtime and a low risk of side effects, it's a convenient and accessible option for people who want to improve their skin quality and create a more youthful appearance.
+</p>
+
+
+  
+  </div>
+  <div class="group relative flex flex-col overflow-hidden">
+    
+    <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+      <Image
+      class="h-full w-full object-cover rounded-lg  shadow-lg mb-10"
+      src={profImage4}
+      alt="Image of oil being poured onto hand"
+      width={800}
+      height={600}
+      format={"webp"}
+    />
+    
+    </div>
+    
+  </div>
+  </div>
+</div><!-- End of Section -->
+
+
+<div class="max-w-7xl mx-auto lg:rounded-lg mb-20 overflow-hidden">
+  <ImageContentBlock
+  title="Book Your Consultation Today"
+  copy="Get in touch to find out more and speak to one of our experts."
+  image={ctaImage1}
+  href="https://www.allurespa.co.uk/treatments/profhilo"
+  linkText="BOOK NOW"
+/>
+</div>
+
+ 
+
+<!--Start of section--><div class="max-w-7xl mt-0 pb-0 mb-10 mx-auto px-4 lg:px-0">
+    
+  <LandingSectionTitle classes="pb-4 text-left">Profhilo or Dermal fillers?
+</LandingSectionTitle>
+  <div
+       class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+     >
+     <div class="group relative flex flex-col">
+
+  <p class="mb-2">
+    While both Profhilo injections and dermal fillers are injectable treatments that can improve skin quality and create a more youthful appearance, there are some key differences between the two.
+</p>
+  <p class="mb-2">
+    A Dermal filler treatment typically contains hyaluronic acid or other synthetic substances that are injected into specific areas of the face to add volume, fill in wrinkles or lines, and enhance facial contours. They can be used to target specific problem areas, such as deep wrinkles or hollows under the eyes, and the effects can be immediate and dramatic.
+</p>
+  <p class="mb-2">
+    In contrast, Profhilo is designed to improve overall skin quality and create a more natural-looking improvement in skin texture, hydration, and firmness. It is injected into multiple points on the face, rather than targeting specific problem areas, and works by stimulating the body's natural collagen and elastin production. The effects of Profhilo are gradual and subtle, and typically require multiple treatments to achieve optimal results.
+</p>
+  <p class="mb-2">
+    Another key difference between the two treatments is the duration of their effects. Dermal fillers typically last for six months to a year, depending on the type and the area treated. In contrast, the effects of Profhilo can last for up to six months or longer, but the treatment is not designed to provide the same level of volume or contouring as dermal fillers.
+</p>
+ 
+  
+  </div>
+  <div class="group relative flex flex-col overflow-hidden">
+    
+    <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+      <Image
+      class="h-full w-full object-cover rounded-lg  lg:mt-10 shadow-lg mb-10"
+      src={profImage5}
+      alt="Image of oil being poured onto hand"
+      width={800}
+      height={600}
+      format={"webp"}
+    />
+  
+    </div>
+   
+  </div>
+  </div>
+  <p class="mb-2">
+    Overall, the choice between these treatments will depend on the individual's goals and concerns. 
+</p>
+  <p class="mb-2">
+    A dermal filler treatment may be a better option for people who want to target specific problem areas and achieve more immediate and dramatic results, while Profhilo may be a better option for people who want to improve overall skin quality and achieve a more natural-looking improvement in their skin texture, hydration, and firmness.
+</p>
+
+
+</div><!-- End of Section -->
+
+
+
+<!-- START OF FAQ SECTION -->
+
+<div class="bg-gray-50 mb-20">
+  <div class="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8">
+
+
+    <LandingSectionTitle classes="pb-4 text-left">Profhilo FAQ
+    </LandingSectionTitle>    
+ 
+    <div>
+      <dl class="space-y-16 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-16 sm:space-y-0 lg:grid-cols-3 lg:gap-x-10">
+      
+
+        
+
+        <!-- More questions... -->
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900"> What is Profhilo, and how does it work?
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">
+           
+            Profhilo is a type of injectable treatment that contains hyaluronic acid, a natural substance that helps to hydrate and plump the skin. When injected into the skin, Profhilo helps to stimulate the body's natural production of collagen and elastin, which can improve skin quality and create a more youthful appearance.</dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">Is Profhilo a safe treatment?</dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">
+            
+            Yes, Profhilo is generally considered to be a safe and well-tolerated treatment. Because it contains hyaluronic acid, which is a natural substance found in the body, there is a low risk of allergic reactions or other adverse effects. However, as with any injectable treatment, there is a small risk of side effects, such as swelling, redness, or bruising at the injection site.
+           </dd>
+        </div>
+
+        
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">How long does a Profhilo treatment take, and is there any downtime?
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">
+            
+            A typical Profhilo treatment takes about 30 minutes to complete, and there is little to no downtime required. Most people are able to resume their normal activities immediately after the treatment, although it's generally recommended to avoid strenuous exercise or other activities that could cause excessive sweating or irritation to the skin.
+          </dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">How many Profhilo treatments are required to achieve optimal results?</dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">
+            
+            The number of Profhilo treatments required will depend on the individual's skin type and goals. In general, most people will require two to three treatments, spaced about four weeks apart, to achieve optimal results. However, some people may require more or fewer treatments, depending on their skin quality and other factors.          </dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900"> How long do the results of a Profhilo treatment last?</dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">
+           
+            The results of a Profhilo treatment can last for up to six months or longer, depending on the individual's skin type and other factors. While the effects are not permanent, they can provide a long-lasting improvement in skin quality and a more youthful appearance.
+          </dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">Who is a good candidate for Profhilo treatment?</dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">
+            
+            Profhilo is a good option for people who want to improve their skin quality and achieve a more youthful appearance, without the need for surgery or other invasive procedures. It can be a great option for people who are experiencing early signs of aging, such as fine lines and wrinkles, loss of skin elasticity, and uneven skin tone. However, it's important to consult with a qualified healthcare professional to determine if Profhilo is right for you, based on your individual skin type and goals.
+        </dd>
+        </div>
+
+        
+
+        </dl>
+      
+  
+    </div>
+    
+  </div>
+  
+</div>
+<!-- END OF FAQ SECTION -->
+<HeroDecorator
+title={`From ${town} and looking for a luxury spa?`}
+sub={`Our new luxury spa opened in the City of London(Next to cannon street station) has the latest treatments at affordable prices.`}
+town={town}
+client:load
+/>
+
+<div class="max-w-7xl mx-auto lg:rounded-lg mb-10 overflow-hidden">
+  <ImageContentBlock
+  title="Book Your Consultation Today"
+  copy="Get in touch to find out more and speak to one of our experts."
+  image={ctaImage1}
+  href="https://www.allurespa.co.uk/treatments/profhilo"
+  linkText="BOOK NOW"
+/>
+</div>
+
+    
+  </main>
+</Layout>

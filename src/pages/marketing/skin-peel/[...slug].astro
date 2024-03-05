@@ -1,0 +1,441 @@
+---
+export const prerender = true
+import Content from "../../../components/Content/LandingContent.astro";
+import LandingSubPageHero from "../../../components/Hero/LandingSubPageHero.astro";
+import ImageContentBlock from "../../../components/ImageContentBlock.astro";
+import Section from "../../../components/Section/Section.astro";
+import LandingSectionTitle from "../../../components/Typography/LandingSectionTitle.astro";
+import Layout from "../../../layouts/LandingLayout.astro";
+import blogBanner from "../../../assets/images/skinpeel1.webp";
+import peelImage2 from "../../../assets/images/skinpeel2.jpg";
+import peelImage3 from "../../../assets/images/skinpeel3.jpg";
+import peelImage4 from "../../../assets/images/skinpeel4.jpg";
+import wrinkles from "../../../assets/images/wrinkles1.jpg";
+import smooth from "../../../assets/images/smooth.jpg";
+import acne from "../../../assets/images/acne.jpg";
+import hydration from "../../../assets/images/hydration.jpg";
+
+import ctaImage1 from "../../../assets/images/homepage-face.jpeg";
+
+import { Image } from 'astro:assets'
+
+import HeroDecorator from "../../../components/Decoraters/";
+import { getSpecificTowns } from "../../../lib/getTowns";
+
+export async function getStaticPaths() {
+  const towns = await getSpecificTowns();
+
+  const paths = [];
+  for (let i = 0; i < towns.length; i++) {
+    const town = towns[i];
+    let path = town
+      .toLowerCase()
+      .replace(/ /g, "-")
+      .replace(/\`/, "")
+      .replace(/\./, "")
+      .replace(/\'/, "");
+    paths.push({ params: { slug: path }, props: { town } });
+  }
+
+  return paths;
+}
+
+const { town } = Astro.props;
+---
+
+<Layout title="Skin Peel Treatment Aesthetic Allure Spa & Skin Clinic" description="Skin Peel Treatment from Aesthetic Allure Spa and Skin Clinic. Comprehensive services help you achieve your skin health & beauty goals.">
+  
+  <LandingSubPageHero
+    heading="Skin Peel Treatment"
+  
+    headerCopy={`A skin peel treatment, also known as a chemical peel, is a cosmetic procedure that involves applying a chemical solution to the skin to exfoliate and remove the outermost layers of damaged or dead skin cells. The treatment can be performed on the face, neck, hands, and other areas of the body to improve the texture and appearance of the skin. Skin peel treatments are used to improve the appearance of fine lines, wrinkles, age spots, acne, and sun damage, as well as to improve skin texture and tone. They can be performed by a licensed aesthetician or a dermatologist, and multiple treatments may be required to achieve optimal results.`}
+    image={blogBanner}
+  />
+ <main>
+
+ 
+ <!--Start of section--><div class="max-w-7xl my-10 mx-auto px-4 lg:px-0">
+    <LandingSectionTitle classes="pb-4 mt-6 text-left">Skin Peel Treatment {town}
+     
+    </LandingSectionTitle>
+    
+    
+    <div
+         class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+       >
+       <div class="group relative flex flex-col">
+        <LandingSectionTitle classes="pb-4 mt-6 text-left">Transform Your Skin 
+            
+        </LandingSectionTitle>
+       
+    <p class="mb-2">
+      Skin peel treatments, also known as chemical peels, have become increasingly popular as a way to transform the look and feel of your skin. This non-invasive procedure is a great way to reduce visible signs of ageing and improve the overall tone and texture of your skin. Chemical peels involve applying a chemical solution to the skin to exfoliate and remove the top layer of damaged or dead skin cells. This process can be performed on the face, neck, hands, and other areas of the body to achieve a more youthful look.
+
+    </p>
+    <p class="mb-2">
+      The strength of the peel solution used will determine how long it is left on your skin before being neutralized and rinsed with water. Depending on the type of peel used, you may experience mild to moderate stinging or a slight burning sensation. After the procedure, your skin may become dry and sensitive, and it is important to follow any post-care instructions given by your doctor.
+    </p>
+    <p class="mb-2">
+      The results of a skin peel treatment can vary depending on the depth of the peel and what type of solution was used. Generally, a series of treatments are needed to achieve the desired results. Skin peels can help reduce the appearance of wrinkles, age spots, and other discolouration while improving skin tone and texture.
+
+    </p>
+    <p class="mb-2">
+      For those looking for a safe and effective way to improve their skin without the need for surgery or injectables, a skin peel treatment can provide the results you are looking for. Talk to your doctor today to find out if a chemical peel is right for you. Transform your skin with a skin peel treatment and start enjoying a more youthful and vibrant complexion.
+
+    </p>
+    </div>
+    <div class="group relative flex flex-col overflow-hidden">
+      
+      <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2 lg:mt-20">
+        <Image
+        class="h-full w-full object-cover rounded-lg  shadow-lg mb-2"
+        src={peelImage2}
+        alt="Skin peel treatment"
+        width={800}
+        height={600}
+        format={"webp"}
+      />
+    
+    </div>
+   
+  </div>
+  </div>
+</div><!-- End of Section -->
+      
+
+
+  <div class="max-w-7xl mx-auto lg:rounded-lg mb-10 overflow-hidden">
+    <ImageContentBlock
+    title="Book Your Consultation Today"
+    copy="Get in touch to find out more and speak to one of our experts."
+    image={ctaImage1}
+    href="https://www.allurespa.co.uk/treatments/skin-peel"
+    linkText="BOOK NOW"
+  />
+  </div>
+
+  
+
+  
+
+
+     <!--START OF SECTION --> <div
+    class="mx-auto max-w-2xl  px-4 lg:max-w-7xl "
+  >
+    <LandingSectionTitle classes="pb-12 lg:py-12 md:text-center">The Benefits of a Skin Peel Treatment
+
+    </LandingSectionTitle>
+    
+    <div
+      class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+    >
+
+    <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+      <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+        <Image
+          width={1000}
+          height={600}
+          src={smooth}
+          alt="PRP Vampire Facial"
+          format="webp"
+          class="h-full w-full object-cover object-center sm:h-full sm:w-full"
+        />
+      </div>
+      <div class="flex flex-1 flex-col space-y-2 py-4">
+        <h3 class="text-lg font-bold text-gray-900">
+          Improved Skin Texture </h3>
+        <p>
+        
+          A skin peel treatment helps to improve the texture of the skin by exfoliating and removing the outermost layers of dead or damaged skin cells. This can lead to a smoother, softer, and more even-looking complexion. The treatment also encourages new cell growth, resulting in healthier-looking skin that feels softer and looks more radiant.
+         </p>
+      </div>
+    </div>
+
+    <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+      <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+        <Image
+          width={1000}
+          height={600}
+          src={wrinkles}
+          alt="PRP Vampire Facial"
+          format="webp"
+          class="h-full w-full object-cover object-center sm:h-full sm:w-full"
+        />
+      </div>
+      <div class="flex flex-1 flex-col space-y-2 py-4">
+        <h3 class="text-lg font-bold text-gray-900">
+          Reduces Signs of Ageing</h3>
+        <p>
+          
+          A skin peel treatment can reduce the appearance of wrinkles, fine lines, and other signs of ageing by exfoliating the skin to reveal a fresher, younger-looking complexion. The treatment helps to stimulate collagen production, which is important for maintaining a healthy and youthful complexion.</p>
+      </div>
+    </div>
+  </div>
+</div><!--END OF SECTION -->
+
+
+ <!--START OF SECTION --> <div
+ class="mx-auto max-w-2xl px-4 lg:max-w-7xl "
+ >
+   <div
+     class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+   >
+
+   <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+     <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+       <Image
+         width={1000}
+         height={600}
+         src={acne}
+         alt="Skin peel treatment"
+         format="webp"
+         class="h-full w-full object-cover object-center sm:h-full sm:w-full"
+       />
+     </div>
+     <div class="flex flex-1 flex-col space-y-2 py-4">
+       <h3 class="text-lg font-bold text-gray-900">
+        Treats Acne Scarring</h3>
+       <p>
+        
+        A skin peel treatment can be beneficial for those with acne-prone or scarred skin. The exfoliating action helps to unclog pores, remove bacteria, and reduce the appearance of acne scars. This can lead to a clearer, brighter complexion with fewer breakouts. </p>
+     </div>
+   </div>
+
+   <div class="group relative flex flex-col overflow-hidden rounded-lg bg-white">
+     <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+       <Image
+         width={1000}
+         height={600}
+         src={hydration}
+         alt="Skin peel treatment"
+         format="webp"
+         class="h-full w-full object-cover object-center sm:h-full sm:w-full"
+       />
+     </div>
+     <div class="flex flex-1 flex-col space-y-2 py-4">
+       <h3 class="text-lg font-bold text-gray-900">
+        Enhances Hydration
+      </h3>
+       <p>
+        
+        The exfoliating action of a skin peel treatment can help to enhance the skin’s natural hydration levels by removing dead and damaged skin cells. This process helps to create a better environment for moisturizers, serums, and other hydrating products to penetrate deeper into the layers of the skin, helping to keep the skin hydrated and healthy.</p>
+     </div>
+   </div>
+ </div>
+ <p class="mb-10">
+  Overall, a skin peel treatment can be beneficial for those looking to improve the texture, tone, and overall health of their skin. The treatment helps to exfoliate away dead or damaged cells while encouraging new cell growth, resulting in healthier-looking and feeling skin with fewer signs of ageing. 
+
+</p>
+</div><!--END OF SECTION -->
+
+
+<div class="max-w-7xl mx-auto lg:rounded-lg mb-20 overflow-hidden">
+    <ImageContentBlock
+    title="Book Your Consultation Today"
+    copy="Get in touch to find out more and speak to one of our experts."
+    image={ctaImage1}
+    href="https://www.allurespa.co.uk/treatments/skin-peel"
+    linkText="BOOK NOW"
+  />
+  </div>
+
+ <!--Start of section--><div class="max-w-7xl mt-0 pb-0 mb-10 mx-auto px-4 lg:px-0">
+    
+  <LandingSectionTitle classes="pb-4 text-left">What to Expect During a Skin Peel Treatment 
+
+</LandingSectionTitle>
+  <div
+       class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+     >
+     <div class="group relative flex flex-col">
+
+  <p class="mb-2">
+    Skin peel treatments are a popular way to help improve skin tone and texture, as well as reduce the appearance of wrinkles, age spots, and other skin imperfections. Depending on the type of skin peel treatment used, the procedure can range from mild exfoliation to deep resurfacing. 
+</p>
+  <p class="mb-2">
+    Before undergoing a skin peel treatment, patients should discuss their goals with a qualified health provider. This will help determine the right type of peel for the patient's skin and the expected results. 
+</p>
+  <p class="mb-2">
+    During a skin peel treatment, patients may experience a mild to moderate tingling sensation on their skin. Depending on the type of peel used, there may also be some discomfort associated with the procedure. A topical anaesthetic or cooling device can be used to minimize any discomfort associated with the treatment. 
+</p>
+  <p class="mb-2">
+    The solution used in skin peel treatments is typically left on for a few minutes before being neutralized and rinsed off with water. Patients should follow their health provider's instructions closely, as leaving the solution on too long could cause irritation or burning. 
+</p>
+<p class="mb-2">
+  After the skin peel treatment, a healing and moisturizing cream will be applied to the area. Sun protection is also important to prevent further damage from ultraviolet (UV) rays. In most cases, patients can expect mild to moderate redness and peeling of the skin for up to 10 days following the procedure. Patients may also experience some sensitivity to sunlight and other environmental stressors during this time. 
+
+</p>
+
+
+  
+  </div>
+  <div class="group relative flex flex-col overflow-hidden">
+    
+    <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+      <Image
+      class="h-full w-full object-cover rounded-lg  shadow-lg mb-10"
+      src={peelImage3}
+      alt="Skin peel treatment"
+      width={800}
+      height={600}
+      format={"webp"}
+    />
+    
+    </div>
+    
+  </div>
+  </div>
+</div><!-- End of Section -->
+    
+   
+
+<!--Start of section--><div class="max-w-7xl mt-0 pb-0 mb-10 mx-auto px-4 lg:px-0">
+    
+  <LandingSectionTitle classes="pb-4 text-left">What are the Different Types of Skin Peels? 
+
+  </LandingSectionTitle>
+    <div
+         class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-2 lg:gap-x-8"
+       >
+       <div class="group relative flex flex-col">
+  
+    <p class="mb-2">
+      Skin peels, also known as chemical peels, are a popular cosmetic treatment used to improve the appearance and texture of the skin. Skin peels involve applying a chemical solution to remove damaged or dead skin cells from the surface of the skin. Depending on the strength of the peel, different types of treatments can be used.
+    </p>
+    <p class="mb-2">
+      Light peels, or superficial peels, are the most common type of skin peel. These treatments use milder acids such as glycolic acid and lactic acid to remove the outermost layer of skin cells. This type of treatment is great for lightening age spots and fine lines, improving skin texture, and evening out skin tone.    </p>
+    <p class="mb-2">
+      Medium peels are a bit more aggressive and are used to treat deeper wrinkles and skin discolouration. These treatments use stronger acids such as trichloroacetic acid (TCA) or salicylic acid, which penetrate deeper into the skin to remove damaged layers of skin cells.
+    </p>
+    <p class="mb-2">
+      Deep peels are the strongest type of skin peel treatment and are used to treat severe wrinkles, discolouration, and sun damage. These peels use Phenol or TCA solutions which can penetrate deeper into the skin for longer-lasting results. Deep peels should only be performed by a professional with extensive experience in administering chemical peels.
+    </p>
+  
+  
+  
+    
+    </div>
+    <div class="group relative flex flex-col overflow-hidden">
+      
+      <div class="aspect-w-2 aspect-h-1 sm:aspect-none h-1/2">
+        <Image
+        class="h-full w-full object-cover rounded-lg  shadow-lg mb-10"
+        src={peelImage4}
+        alt="Skin peel treatment"
+        width={800}
+        height={600}
+        format={"webp"}
+      />
+      <h4 class="text-xs text-right hidden md:block -mt-8">Results from a deep peel can last up to 10 years.
+  
+      </h4>
+      </div>
+      <h4 class="text-xs mt-2 text-right md:hidden">Results from a deep peel can last up to 10 years.
+  
+      </h4>
+    </div>
+    
+    </div>
+    <p class="mb-2 mt-4">
+      No matter your skin care needs, there is a skin peel treatment that can help you achieve the look you desire. From light peels for surface-level imperfections to deep peels for more severe issues, there are treatments available to help everyone get the beautiful skin they want. Be sure to talk with one of our expert team before deciding on a chemical peel treatment plan.  
+    </p>
+  </div><!-- End of Section -->
+
+
+ 
+
+
+<!-- START OF FAQ SECTION -->
+
+<div class="bg-gray-50 mb-20">
+  <div class="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8">
+
+
+    <LandingSectionTitle classes="pb-4 text-left">Skin Peel FAQ
+    </LandingSectionTitle>    
+ 
+    <div>
+      <dl class="space-y-16 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-16 sm:space-y-0 lg:grid-cols-3 lg:gap-x-10">
+      
+
+        
+
+        <!-- More questions... -->
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">What Is a Skin Peel Treatment?
+        </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">
+            
+            A skin peel treatment, also known as a chemical peel, is a cosmetic procedure that involves applying a chemical solution to the skin to exfoliate and remove the outermost layers of damaged or dead skin cells. The chemicals used in this procedure typically contain specific concentrations of acids such as alpha-hydroxy acids, trichloroacetic acid (TCA), or phenol.</dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">What Are the Benefits of a Skin Peel Treatment?
+        </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">
+            
+            The primary benefit of undergoing a skin peel treatment is that it can improve the overall texture and appearance of the skin by reducing wrinkles, fine lines, acne scars, dark spots, and other skin imperfections. Additionally, it can help to reduce the visible signs of ageing while promoting a brighter and more even skin tone.</dd>
+        </div>
+
+        
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">What Areas Can Be Treated With Skin Peel Treatments?
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">
+            
+            Skin peel treatments can be safely performed on the face, neck, hands, chest, arms, back, and legs. The treatment can be used to address a wide range of skin concerns, including wrinkles and fine lines, dark spots, acne scars, sun damage, and more.</dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">How Long Does a Skin Peel Treatment Take?</dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">
+            
+            The length of time needed for the treatment can vary depending on the type and strength of the chemical peel being used. Generally, a mild chemical peel can take anywhere from 15-30 minutes, while stronger peels may require up to an hour or longer.</dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900">What Is the Recovery Period Like After a Skin Peel Treatment?</dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">
+            
+            The recovery period after a skin peel treatment will depend on the strength of the peel and the individual's own healing process. Generally, patients can expect to experience some redness and peeling of the skin for a few days following the treatment. It's important to follow your doctor's aftercare instructions to ensure a safe and successful recovery.</dd>
+        </div>
+
+        <div>
+          <dt class="text-base font-semibold leading-7 text-gray-900"> Are There Any Side Effects or Risks Involved With Skin Peel Treatments?</dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">
+           
+            Although skin peel treatments are generally safe and effective, there is still a risk of side effects such as scarring, infection, discolouration of the skin, or excessive redness. It's important to consult with your doctor prior to undergoing any type of treatment in order to ensure that it is the right choice for you.</dd>
+        </div>
+
+        
+
+        </dl>
+      
+  
+    </div>
+   
+  </div>
+  
+</div>
+<!-- END OF FAQ SECTION -->
+<HeroDecorator
+title={`From ${town} and looking for a luxury spa?`}
+sub={`Our new luxury spa opened in the City of London(Next to cannon street station) has the latest treatments at affordable prices.`}
+town={town}
+client:load
+/>
+
+<div class="max-w-7xl mx-auto lg:rounded-lg mb-10 md:mt-0 overflow-hidden">
+  <ImageContentBlock
+  title="Book Your Consultation Today"
+  copy="Get in touch to find out more and speak to one of our experts."
+  image={ctaImage1}
+  href="https://www.allurespa.co.uk/treatments/skin-peel"
+  linkText="BOOK NOW"
+/>
+</div>
+
+    
+  </main>
+</Layout>
